@@ -1,0 +1,124 @@
+/**
+ * --------------------------------------------------------------------------
+ * Banking navigation layout specific customizations
+ * --------------------------------------------------------------------------
+ *
+ * @name navigation
+ * @description This item contains customization related to container-navigation templates. Mostly shadows and spacing.
+ * @example
+ *  <div class="page-container bp-NavigationContainer">
+ *  <!-- top navbar -->
+ *    <div class="navbar navbar-default navbar-static-top rb-navbar-top" role="navigation">
+ *      <div class="container-fluid">
+ *        <div class="navbar-header rb-navbar-top-item">
+ *          <div class="navbar-brand">Logo</div>
+ *        </div>
+ *        <div class="nav navbar-nav navbar-right rb-navbar-top-item rb-notifications-area hidden-xs no-margin">User menu</div>
+ *      </div>
+ *    </div>
+ *    <div class="row rb-content-row">
+ *      <div class="rb-sidebar">
+ *        <ul class="nav">
+ *         <li><a>Action 1</a></li>
+ *         <li><a>Action 2</a></li>
+ *         <li><a>Action 3</a></li>
+ *        </ul>
+ *      </div>
+ *      <div class="rb-content"> Some content</div>
+ *    </div>
+ *  </div>
+ */
+
+.pageContainer,
+.bp-NavigationContainer {
+  @include size(100%, 100%);
+}
+
+.rb-row-content {
+  width: 100%;
+  height: calc(100% - #{$navbar-top-height});
+}
+
+/* padding clearance for cxp design mode */
+body:hover .rb-content .bp-container.bp-manageableArea {
+  &, &:hover {
+    padding: 0;
+  }
+}
+
+.page-container .sticky-top-outline {
+  margin-top: $navbar-top-height;
+}
+
+.rb-row-content {
+  position: absolute;
+}
+
+.rb-navbar-top {
+  height: $navbar-top-height;
+  box-shadow: $navbar-box-shadow;
+
+  &-item {
+    position: relative;
+    top: $navbar-top-height / 2;
+    transform: translateY(-50%);
+  }
+}
+
+.rb-sidebar {
+  background-color: darken($blue, 20%);
+  border-right: $default-border;
+  border-right-color: transparent;
+  padding: 0;
+  position: fixed;
+  height: 100%;
+  width: $navbar-side-width;
+  z-index: 1;
+  top: $navbar-top-height;
+  bottom: 0;
+  overflow-y: auto;
+
+  .bb-universal-nav {
+    padding: 0;
+
+    .bp-g-model {
+      width: 100%;
+    }
+  }
+}
+
+.rb-content {
+  padding-left: $navigation-main-content-padding-left;
+  padding-right: $navigation-main-content-padding-right;
+  padding-top: $navigation-main-content-padding-top;
+}
+
+.rb-row-content {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* the common rule for widgets isn't applicable for the navigation areas */
+.nav .bp-widget-body,
+.rb-sidebar .bp-widget-body {
+  min-width: inherit;
+}
+
+@include media-breakpoint-up(md) {
+  .rb-content {
+    padding-left: $navbar-side-width + $navigation-main-content-padding-left;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .page-container .rb-sidebar {
+    display: none;
+    left: 0;
+    position: fixed;
+    top: $navbar-top-height;
+  }
+
+  .rb-row-content-left.active .rb-sidebar {
+    display: block;
+  }
+}

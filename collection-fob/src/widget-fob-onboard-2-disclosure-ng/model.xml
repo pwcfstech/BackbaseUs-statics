@@ -1,0 +1,29 @@
+<catalog>
+  <widget>
+    <name>widget-fob-onboard-2-disclosure-ng</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <properties>
+      <property name="TemplateName">
+        <value type="string">Standard_Widget</value>
+      </property>
+      <property label="Title" name="title" viewHint="text-input,admin">
+        <value type="string">Why we collect this information</value>
+      </property>
+      <property name="src">
+        <value type="string">$(itemRoot)/index.hbs</value>
+      </property>
+      <property name="extensionSource" type="datasource">
+        <value>resource:/static/items/${preferences.extension.value}/templates/template.ng.html?sanitize=false</value>
+      </property>
+      <property name="thumbnailUrl">
+        <value type="string">$(itemRoot)/assets/icon.png</value>
+      </property>
+      <property name="extension" viewHint="text-input,admin">
+        <value type="string">ext-fob-onboard-2-disclosure-ng</value>
+      </property>
+      <property label="Version" name="version" viewHint="text-input,admin,designModeOnly">
+          <value type="string">0.1.0-alpha.0</value>
+      </property>
+    </properties>
+  </widget>
+</catalog>

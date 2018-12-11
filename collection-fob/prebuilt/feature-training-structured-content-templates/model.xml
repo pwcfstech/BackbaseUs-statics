@@ -1,0 +1,13 @@
+<catalog>
+    <feature>
+        <name>feature-training-structured-content-templates</name>
+        <properties>
+            <property label="Title" name="title" viewHint="admin,designModeOnly">
+                <value type="string">Training Structured Content Templates</value>
+            </property>
+            <property label="Version" name="version" viewHint="designModeOnly">
+                <value type="string">0.0.1</value>
+            </property>
+        </properties>
+    </feature>
+</catalog>

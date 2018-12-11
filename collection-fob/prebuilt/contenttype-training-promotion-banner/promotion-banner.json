@@ -1,0 +1,48 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "bannerImage",
+    "bannerTitle",
+    "bannerDescription"
+  ],
+  "properties": {
+    "bannerImage": {
+      "$id": "#/properties/bannerImage",
+      "type": "string",
+      "title": "The Bannerimage Schema",
+      "default": "",
+      "metadata": {
+		  "infoText": "Provide the banner image",
+		  "renderingHint": "image"
+	   },
+      "examples": [
+        "banner.jpg"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "bannerTitle": {
+      "$id": "#/properties/bannerTitle",
+      "type": "string",
+      "title": "The Bannertitle Schema",
+      "default": "",
+      "examples": [
+        "Extraordinary privileges."
+      ],
+      "pattern": "^(.*)$"
+    },
+    "bannerDescription": {
+      "$id": "#/properties/bannerDescription",
+      "type": "string",
+      "title": "The Bannerdescription Schema",
+      "default": "",
+      "examples": [
+        "Enjoy the good life with a premium card. Benefit from our excellent services and lowest rates."
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

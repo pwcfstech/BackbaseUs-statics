@@ -1,0 +1,78 @@
+<div class="fob-container" ng-controller="Onboard2CaptureidController as $ctrl">
+    <div ng-show="!$ctrl.primaryScreen">
+
+    <div class="fob-main-content" ng-if="photoPromptScreen" style="padding-top:2em">
+        <div class="fob-nav">
+            <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+            <!-- <span><img src="/gateway/api/portal/static/items/ext-fob-onboard-2-terms/assets/logo1.png" width="80px" alt="PwC Logo" /></span> -->
+            <span class="fob-step-button">step 3 of 5</span>
+        </div>
+
+        <div class="fob-main-content">
+            <div style="text-align: center;">
+                <span class="logo1"></span>
+            </div>
+            <div class="fob-top-heading">Photo of your License</div>
+            <div class="fob-top-heading-subtitle" style="color:black;">
+                Place your license on a dark background in a well-lit space, and make sure the entire license is in focus.
+            </div>
+            <div>
+                <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/captureId-cameraimage.png" style="margin:auto; width:100%;"/>
+            </div>
+            <div class="fob-user-selection-button" style="text-align: center" ng-click="$ctrl.moveToNextScreen('frontOfLicensePromptScreen')">
+                TAKE PHOTO
+            </div>
+            <div class="fob-user-selection-button" style="text-align:center;border: white;text-decoration: underline" ng-click="$ctrl.moveToNextScreen('current-address')">
+                Manually enter your information
+            </div>
+        </div>
+    </div>
+    </div>
+    <div ng-show="!$ctrl.primaryScreen">
+    <div class="fob-main-content img-wrapper note" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-if="frontOfLicensePromptScreen">
+        <div ng-click="$ctrl.moveToNextScreen('frontOfLicenseReviewScreen')">
+            <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/front-photo-1.png" style="margin:auto; width:100%;"/>
+        </div>
+    </div>
+
+    <div class="fob-main-content img-wrapper note" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-if="frontOfLicenseReviewScreen">
+        <div style="padding-top: 0px; padding-right: 0px; padding-left: 0px;">
+            <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/front-photo-1-review.png" style="margin:auto; width:100%;"/>
+        </div>
+        <div class="fob-main-content img-overlay" style="padding-top: 0em;padding-top: 0em;margin-right: 39%;margin-top: 0em;top: -10em;">
+            <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/retakebutton.png" style="margin: auto"
+                ng-click="$ctrl.moveToNextScreen('frontOfLicensePromptScreen')" />
+        </div>
+        <div class="fob-main-content img-overlay" style="padding-top:0em;left: 0;margin-right: 38%;margin-top: 5em;">
+            <img ng-click="$ctrl.moveToNextScreen('frontOfLicenseApprovalScreen')" src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/nextbutton.png" style="margin: auto;margin-top:-150%;" />
+        </div>
+    </div>
+    <div class="fob-main-content note" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-if="frontOfLicenseApprovalScreen">
+        <div ng-click="$ctrl.moveToNextScreen('backOfLicensePromptScreen')">
+            <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/front-photo-1-saved.png" style="margin:auto; width:100%;"/>
+        </div>
+    </div>
+    <div class="fob-main-content  note" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-if="backOfLicensePromptScreen">
+        <div class="fob-main-content" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-click="$ctrl.moveToNextScreen('backOfLicenseReviewScreen')">
+            <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/back-photo-1.png" style="margin:auto; width:100%;"/>
+        </div>
+    </div>
+    <div class="fob-main-content img-wrapper note" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-if="backOfLicenseReviewScreen">
+        <div class="fob-main-content" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-click="$ctrl.moveToNextScreen('backOfLicenseApprovalScreen')">
+            <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/back-photo-2-review.png" style="margin:auto; width:100%;" />
+        </div>
+        <div class="fob-main-content img-overlay" style="padding-top: 0em;padding-top: 0em;margin-right: 39%;margin-top: 0em;top: -10em;">
+            <span ng-click="$ctrl.moveToNextScreen('backOfLicensePromptScreen')">
+                <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/retakebutton.png" style="margin: auto"/> </span>
+        </div>
+        <div class="fob-main-content img-overlay" style="padding-top:0em;left: 0;margin-right: 38%;margin-top: 5em;">
+            <img ng-click="$ctrl.moveToNextScreen('backOfLicenseApprovalScreen')" src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/nextbutton.png" style="margin: auto;margin-top:-150%;"/>
+        </div>
+    </div>
+    <div class="fob-main-content note" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;" ng-if="backOfLicenseApprovalScreen" ng-click="$ctrl.moveToNextScreen('current-address')">
+        <div class="fob-main-content" style="padding-top: 0px; padding-right: 0px; padding-left: 0px;">
+            <img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-captureid-ng/assets/back-photo-1-saved.png" style="margin:auto; width:100%;"/>
+        </div>
+    </div>
+</div>
+</div>

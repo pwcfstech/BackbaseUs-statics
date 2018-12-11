@@ -1,0 +1,160 @@
+/**
+ * --------------------------------------------------------------------------
+ * Transaction category component
+ * --------------------------------------------------------------------------
+ * @name transaction-category
+ * @description
+ * Component that renders particular font awesome icon for
+ * transaction category and provides an option to render them
+ * in a form of radio button list
+ *
+ * @example
+ * <span
+ *   aria-hidden="true"
+ *   class="bb-transaction-category bb-transaction-category-home"
+ * ></span>
+ *
+ * // double sized icon
+ * <span
+ *   aria-hidden="true"
+ *   class="bb-transaction-category bb-transaction-category-large bb-transaction-category-home"
+ * ></span>
+ *
+ * // list of categories
+ * <div class="bb-transaction-category-list bb-transaction-category-list-limited list-items-wrapper row">
+ *   <div class="bb-transaction-category-list-item list-item hover-item text-default col-xs-12">
+ *     <div class="radio clearfix m-0">
+ *       <label class="col-xs-12">
+ *         <input
+ *           class="bb-transaction-category-input"
+ *           type="radio"
+ *           value="Category"
+ *         />
+ *         <span aria-hidden="true"
+ *           class="bb-transaction-category bb-transaction-category-home fa-lg">
+ *         </span>
+ *         <span class="bb-transaction-category-name">Category</span>
+ *       </label>
+ *     </div>
+ *   </div>
+ * </div>
+ */
+
+$bb-tc-css-prefix: "bb-transaction-category";
+
+.#{$bb-tc-css-prefix} {
+  @extend .fa;
+  line-height: inherit;
+}
+
+.#{$bb-tc-css-prefix}-large {
+  font-size: 1.4rem;
+  line-height: $line-height-base * 1.5;
+}
+
+.#{$bb-tc-css-prefix}-list-item {
+  .#{$bb-tc-css-prefix} {
+    line-height: 60px;
+    text-align: center;
+    vertical-align: top;
+    width: 34px;
+  }
+
+  .#{$bb-tc-css-prefix}-name {
+    line-height: 60px;
+  }
+}
+
+.#{$bb-tc-css-prefix}-parent-label {
+  background-color: $gray-050;
+}
+
+.#{$bb-tc-css-prefix}-name {
+  line-height: $line-height-base * 1.5;
+}
+
+.#{$bb-tc-css-prefix}-icon {
+  width: 1.4rem;
+  text-align: center;
+}
+
+.#{$bb-tc-css-prefix}-home,
+.#{$bb-tc-css-prefix}-mortgage,
+.#{$bb-tc-css-prefix}-rent {
+  @extend .fa-home;
+  color: theme-color("success");
+}
+
+.#{$bb-tc-css-prefix}-health-beauty,
+.#{$bb-tc-css-prefix}-beauty,
+.#{$bb-tc-css-prefix}-health-fitness {
+  @extend .fa-heart;
+  color: theme-color("danger");
+}
+
+.#{$bb-tc-css-prefix}-food-drinks,
+.#{$bb-tc-css-prefix}-alcohol-bars,
+.#{$bb-tc-css-prefix}-fast-food,
+.#{$bb-tc-css-prefix}-groceries,
+.#{$bb-tc-css-prefix}-restaurants {
+  @extend .fa-utensils;
+  color: color("purple");
+}
+
+.#{$bb-tc-css-prefix}-transportation,
+.#{$bb-tc-css-prefix}-car,
+.#{$bb-tc-css-prefix}-public-transport {
+  @extend .fa-car;
+  color: theme-color("success");
+}
+
+.#{$bb-tc-css-prefix}-shopping,
+.#{$bb-tc-css-prefix}-clothing,
+.#{$bb-tc-css-prefix}-electronics {
+  @extend .fa-shopping-cart;
+  color: theme-color("warning");
+}
+
+.#{$bb-tc-css-prefix}-hobbies-entertainment {
+  @extend .fa-university;
+  color: color("purple");
+}
+
+.#{$bb-tc-css-prefix}-bills-utilities,
+.#{$bb-tc-css-prefix}-internet,
+.#{$bb-tc-css-prefix}-mobile-phone,
+.#{$bb-tc-css-prefix}-utilities {
+  @extend .fa-file;
+  color: theme-color("danger");
+}
+
+.#{$bb-tc-css-prefix}-income,
+.#{$bb-tc-css-prefix}-bonus,
+.#{$bb-tc-css-prefix}-salary-wages {
+  @extend .fa-plus-square;
+  color: theme-color("info");
+}
+
+.#{$bb-tc-css-prefix}-other-income,
+.#{$bb-tc-css-prefix}-interest-income,
+.#{$bb-tc-css-prefix}-rental-income {
+  @extend .fa-database;
+  color: theme-color("warning");
+}
+
+.#{$bb-tc-css-prefix}-transfer {
+  @extend .fa-exchange-alt;
+  color: theme-color("warning");
+}
+
+.#{$bb-tc-css-prefix}-uncategorised {
+  @extend .fa-archive;
+  color: theme-color("dark");
+}
+
+@include media-breakpoint-up(sm) {
+  .#{$bb-tc-css-prefix}-list-limited {
+    max-height: 335px;
+    overflow-y: scroll;
+  }
+}

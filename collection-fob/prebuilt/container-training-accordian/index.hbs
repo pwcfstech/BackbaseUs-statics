@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Accordian Container</title>
+
+    <link rel="stylesheet" type='text/css' href="styles/container-training-accordian.css"/>
+    <script type="text/javascript" src="scripts/container-training-accordian.js"></script>
+    {{#*inline "featureRoot"}}{{getConfig "contextRoot"}}/static/items{{/inline}}
+	<script src="{{> featureRoot}}/jquery/jquery-1.12.4.min.js"></script>
+	<script src="{{> featureRoot}}/bootstrap-feature/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body class="container-training-accordian" onload="window['container-training-accordian'](widget || __WIDGET__)">
+    <div id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="card panel">
+    <div class="card-header" id="headingOne" role="tab">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Collapsible Group Item #1
+          </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <!-- TODO: 1. Create area #1 for drag drop of widgets in experience manager -->
+        <div data-area="0"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card panel">
+    <div class="card-header" id="headingTwo" role="tab">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Collapsible Group Item #2
+          </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <!-- TODO: 2. Create area #2 for drag drop of widgets in experience manager -->
+        <div data-area="1"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card panel">
+    <div class="card-header" id="headingThree" role="tab">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Collapsible Group Item #3
+          </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <!-- TODO: 3. Create area #3 for drag drop of widgets in experience manager -->
+        <div data-area="2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

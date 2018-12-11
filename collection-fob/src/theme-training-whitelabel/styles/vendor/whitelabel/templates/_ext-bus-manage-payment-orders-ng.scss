@@ -1,0 +1,20 @@
+.badge {
+  &:before {
+    content: attr(data-label);
+  } // Hides default label status label on mobile responsive view
+  .badge-content {
+    display: none;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .badge {
+    // Hides generated content, such as the label status on desktop view
+    &:before {
+      content: none;
+    } // Displays default label status on desktop view
+    .badge-content {
+      display: inline;
+    }
+  }
+}

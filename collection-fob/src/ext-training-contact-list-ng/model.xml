@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <feature>
+        <name>ext-training-contact-list-ng</name>
+        <properties>
+            <property name="version" label="Version" readonly="true" viewHint="designModeOnly">
+                <value type="string">2.19.8</value>
+            </property>
+        </properties>
+    </feature>
+</catalog>

@@ -1,0 +1,26 @@
+<catalog>
+    <widget>
+        <name>widget-training-footer-navigation</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property label="Title" name="title" type="string" viewHint="input=text-input,role=admin">
+                <value>Footer navigation</value>
+            </property>
+            <property name="src" type="string">
+                <value>$(itemRoot)/index.hbs</value>
+            </property>
+            <property name="version" type="string">
+                <value>0.1.0-alpha.0</value>
+            </property>
+            <property name="thumbnailUrl" type="string">
+                <value>$(itemRoot)/icon.png</value>
+            </property>
+            <property name="footerRootLink" label="Footer Root Link" viewHint="role=manager,input=link-ref" type="string">
+                <value></value>
+            </property>
+            <property name="footerNavigationDataSource" type="datasource">
+                <value>navigation:/${currentLink}?type=fixed&amp;fixedRoot=${preferences.footerRootLink.value}</value>
+            </property>
+        </properties>
+    </widget>
+</catalog>

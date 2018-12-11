@@ -1,0 +1,109 @@
+<div class="fob-container" ng-controller="RegisterandloginController as $ctrl">
+    <div class="fob-nav">
+        <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592</span>
+        <span class="fob-step-button">step 1 of 5</span>
+    </div>
+
+    <div ng-show="$ctrl.leadForm">
+		<div class="fob-main-content" ng-cloak>
+			<div style="text-align: center;">
+				<span class="logo1"></span>
+			</div>
+			<div class="fob-top-heading">Let's get started </div>
+			<div class="fob-top-heading-subtitle" style="color:black;">
+				You will need the following information to proceed with your application:
+			</div>
+			<div class="fob-top-heading-subtitle2" style="color:black; font-size: 1em;">
+				- Personal Information or Drivers License
+			</div>
+			<div class="fob-top-heading-subtitle2" style="color:black; font-size: 1em;">
+				- Social Security Number
+			</div>
+            <div>
+				<div class="fob-content-text fob-bold">Name*</div>
+				<input ng-model="$ctrl.firstName"
+					   type="text"
+                       class="fob-block-box fob-user-input"
+					   ng-blur="$ctrl.checkFormButton()"
+					   placeholder="First Name">
+				<input ng-model="$ctrl.lastName"
+					   type="text"
+					   ng-blur="$ctrl.checkFormButton()"
+                       class="fob-block-box fob-user-input"
+                       placeholder="Last Name">
+            </div>
+			<div>
+				<div class="fob-content-text fob-bold">Email address*</div>
+				<input type="email"
+                       ng-model="$ctrl.email"
+					   ng-blur="$ctrl.checkFormButton()"
+                       class="fob-block-box fob-user-input"
+                       placeholder="Enter email">
+				<input type="email"
+                       ng-model="$ctrl.confirmEmail"
+					   ng-blur="$ctrl.checkFormButton()"
+                       class="fob-block-box fob-user-input"
+                       placeholder="Confirm email">
+			</div>
+			<div>
+				<div class="fob-content-text fob-bold">User Name*</div>
+				<input type="text"
+                       ng-model="$ctrl.userName"
+                       ng-blur="$ctrl.checkFormButton()"
+                       class="fob-block-box fob-user-input"
+                       placeholder="Username">
+			</div>
+			<div>
+				<div class="fob-content-text fob-bold">Password*</div>
+				<div style="color:rgb(166,164,164); font-size:0.8em;">Must be 6 characters with at least 1 number and 1 upper case character.</div>
+				<input type="password"
+                       name="userPassword"
+                       ng-model="$ctrl.userLogin.password"
+                       class="fob-block-box fob-user-input"
+                       ng-blur="$ctrl.checkFormButton()"
+                       ng-pattern="/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/"
+                       placeholder="Password">
+                <input type="password"
+                       name="confirmUserPassword"
+                       ng-model="$ctrl.userLogin.confirmPassword"
+                       class="fob-block-box fob-user-input"
+                       ng-pattern="/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/"
+                       ng-blur="$ctrl.hidePassword()"
+                       placeholder="Confirm Password">
+			</div>
+			<div style="color:rgb(166,164,164); font-size:0.8em;"> * indicates a required field</div>
+
+			<div class="fob-next-screen-button"
+				 ng-class="$ctrl.nextScreenButtonColor"
+				 ng-click="$ctrl.moveToNextScreen('register')">Next</div>
+
+			<div class="fob-link" ng-click="$ctrl.toggleScreens()">Log in as an existing customer</div>
+		</div>
+	</div>
+
+    <div ng-show="!$ctrl.leadForm">
+        <div class="fob-main-content" ng-cloak>
+            <div class="fob-top-heading">Login in as existing customer</div>
+            <div>
+                <div class="fob-content-text fob-bold">User Name</div>
+                <input class="fob-block-box fob-user-input"
+                       ng-model="$ctrl.userLogin.userName"
+                       type="text"
+                       placeholder="Username">
+            </div>
+            <div>
+                <div class="fob-content-text fob-bold">Password</div>
+                <input class="fob-block-box fob-user-input"
+                       ng-model="$ctrl.userLogin.password"
+                       type="password"
+                       name="password"
+                       ng-pattern="/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/"
+                       placeholder="Password">
+            </div>
+            <div class="fob-link">
+                <span  ng-click="$ctrl.showForgotPassScreen()">Forgot your password?</span>
+            </div>
+            <div class="fob-next-screen-button" ng-click="$ctrl.moveToNextScreen('login')">Log In</div>
+        </div>
+    </div>
+</div>

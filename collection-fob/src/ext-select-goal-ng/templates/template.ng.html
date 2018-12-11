@@ -1,0 +1,29 @@
+<div class="fob-container" ng-controller="GoalController as $ctrl">
+	<div class="fob-nav">
+		<span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+	</div>
+
+    <div class="fob-main-content" ng-cloak>
+        <div style="text-align: center;">
+            <span class="logo1"></span>
+        </div>
+        <div class="fob-top-heading">People in similar financial situation have the following <strong>goals.</strong> What is yours?</div>
+        <div class="fob-top-heading-subtitle" style="margin-top:1em; margin-bottom:0.9em;">Select your top goal</div>
+
+         <div ng-repeat="goal in $ctrl.btn | limitTo:$ctrl.displayButtonCount track by $index"> 
+        
+            <div class="fob-user-selection-button" style="display:inline-block;" ng-click="$ctrl.tapButton($index)" aria-disabled="true">
+                <span span style="float: left;"><img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-select-goal-ng/assets/{{$ctrl.icons[$index]}}"
+                           style="filter: invert(78%) sepia(98%) saturate(1579%) hue-rotate(163deg) brightness(97%) contrast(92%); margin-right: 1em;"
+                           height="40px" width="40px" alt="Logo" /></span>
+                <span>{{goal}}</span>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:1em;">
+            <span class="fob-underline"
+                  ng-style="$ctrl.seeMoreButtonColor"
+                  ng-click="$ctrl.seeMoreTap()"
+                  ng-disabled="$ctrl.seeMoreButtonEnabled">See More &#9660;</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,173 @@
+//Your new backbase sass mixins belong here -- which output some css values via the `@include` syntax keyword
+//This is where the backbase theme overrides or extends existing Bootstrap 4 mixins
+
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/**
+ * @name Arrow classes mixin
+ *
+ * @description
+ * This will produce classes that can be used to display arrows attached on element
+ * for which the mixin is included.
+ * The classes are named using the format bb-arrow-{position}
+ *
+ * Where position is one of: top, right, bottom, left
+ *
+ * Parameters for this mixin are:
+ * size - Size of arrow in
+ * border - Size of border
+ * (it is rendered beneath arrow, so size should be greater than arrow size)
+ * offset - Arrow offset from left/top (depending on orientation)
+ * arrow-color
+ * border-color
+ */
+
+$positions: (
+  top:    ( side: bottom, offset: left ),
+  right:  ( side: left,   offset: top  ),
+  bottom: ( side: top,    offset: left ),
+  left:   ( side: right,  offset: top  ),
+);
+
+@mixin arrow($size, $border, $offset, $arrow-color, $border-color) {
+  @each $pos, $definitions in $positions {
+    $pos-side: map-get($definitions, side);
+    $pos-offset: map-get($definitions, offset);
+    &.bb-arrow-#{$pos} {
+      &:after,
+      &:before {
+        @include size(0, 0);
+        #{$pos-side}: 100%;
+        border: solid transparent;
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        #{$pos-offset}: $offset;
+      }
+      &:after {
+        border-#{$pos-side}-color: $arrow-color;
+        border-width: $size;
+        margin-#{$pos-offset}: -$size;
+      }
+      &:before {
+        border-#{$pos-side}-color: $border-color;
+        border-width: $size + $border;
+        margin-#{$pos-offset}: - $size - $border;
+      }
+    }
+  }
+}
+
+/**
+ * @name Positive rotation classes mixin
+ *
+ * @description
+ * This will generate classes with transform rotate '+' deg for a given interval
+ *
+ * Parameters:
+ * $minRotationAngle - starting angle
+ * $maxRotationAngle - end angle
+ */
+
+ @mixin generate-positive-rotation-classes($minRotationAngle, $maxRotationAngle) {
+  @for $i from $minRotationAngle through $maxRotationAngle {
+    .rotate-p-#{$i}-deg {
+      transform: rotate(#{$i}deg);
+    }
+  }
+}
+
+/**
+ * @name Negative rotation classes mixin
+ *
+ * @description
+ * This will generate classes with transform rotate '-' deg for a given interval
+ *
+ * Parameters:
+ * $minRotationAngle - starting angle
+ * $maxRotationAngle - end angle
+ */
+@mixin generate-negative-rotation-classes($minRotationAngle, $maxRotationAngle) {
+  @for $i from $minRotationAngle through $maxRotationAngle {
+    .rotate-n-#{$i}-deg {
+      transform: rotate(-#{$i}deg);
+    }
+  }
+}
+
+/**
+ * @name Spinner mixin
+ *
+ * @description
+ * This will add an animated spinner in the background
+ *
+ * Parameters for this mixin are:
+ * size - Width and height of the spinner
+ */
+ @mixin spinner($size) {
+  @include size($size, $size);
+  background: url(../assets/images/spinner.svg) no-repeat;
+  background-size: $size;
+}
+
+@mixin stick-right($content-width, $content-height) {
+  position: absolute;
+  width: $content-width;
+  height: $content-height;
+  top: 50%;
+  margin-top: -$content-height / 2;
+  right: 0px;
+  margin-left: 0;
+}
+
+/**
+ * @name Chart colors mixin
+ *
+ * @description
+ * Generates classes with colors for charts
+ *
+ * Parameters for this mixin are:
+ * $colors - list of colors
+ */
+@mixin generate-chart-color-classes($colors) {
+  @for $i from 1 through length($colors) {
+    .chart-color-#{$i} { color: nth($colors, $i); }
+    .chart-background-color-#{$i} { background-color: nth($colors, $i); }
+  }
+}
+
+/**
+ * @name fade animation mixin
+ *
+ * @description
+ * defines animation for fades
+ *
+ * Parameters for this mixin are:
+ * $class-name: Class name
+ * $background-from: Color value;
+ * $background-to: Color value;
+ **/
+
+@mixin animation-ease-in {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@mixin fade-background-from-to($class-name, $background-from, $background-to) {
+  @keyframes fade-#{$class-name} {
+      from {background-color: $background-from;}
+      to {background-color: $background-to;}
+  }
+  .#{$class-name} {
+      background-color: $background-from;
+      animation-name: fade-#{$class-name};
+      animation-fill-mode: forwards;
+      animation-delay: 3s;
+      @include animation-ease-in;
+  }
+};

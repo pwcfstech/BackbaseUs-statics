@@ -1,0 +1,45 @@
+//ENTRY POINT: Specific Components Styling Layer
+
+//SECTION: Specific styling (ui-bb-***)
+//ONLY reserved for Singularly 'black-boxed' UI or
+//deeply-nested/capability-(involved || dependent) components
+
+//Shared Collection UIs
+@import 'ui-bb-chartjs-chart-ng';
+@import 'ui-bb-chartjs-chart-bar-ng';
+@import 'ui-bb-chartjs-chart-donut-ng';
+@import 'ui-bb-chartjs-chart-line-ng';
+@import 'ui-bb-checkbox-indeterminate-ng';
+@import 'ui-bb-currency-input-ng';
+@import 'ui-bb-loading-overlay-ng';
+@import 'ui-bb-switcher-ng';
+//Capability UIs
+@import 'ui-bb-checkbox-indeterminate-ng';
+@import 'ui-bb-rich-text-editor-ng';
+
+//SECTION: reusable agnostic patterns
+//Only reserved for generically functional elements
+@import 'avatars';
+@import 'logos';
+@import 'icons';
+@import 'search-box';
+@import 'format-amounts';
+@import 'notifications';
+@import 'chart-tooltip';
+@import 'list-group-items';
+@import 'progress-indicators';
+
+//SECTION: Bootstrap 4 Class Overrides
+//BS4 specific classes (not variable overrides!)
+@import 'ui-tw-navbar';
+
+//SECTION: UI-Bootstrap 3-to-4 Patch
+//Patch fix @extend class remaps
+@import 'uib-buttons-ng';
+@import 'uib-accordion-ng';
+@import 'uib-datepicker-ng';
+@import 'uib-dropdown-ng';
+@import 'uib-modal-ng';
+@import 'uib-tooltip-ng';
+@import 'uib-typeahead-popup-ng';
+

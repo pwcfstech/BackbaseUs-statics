@@ -1,0 +1,174 @@
+$borders-width: 2px;
+$borders-color: $gray-100;
+$border-radius: 5px;
+$contact-name-auth-right-padding: 170px;
+$contact-name-right-padding: 90px;
+$contact-panel-min-height: 400px;
+$icon-size: 14px;
+$gutter: 15px;
+$spacing: 6px;
+
+.ext-bus-contact-list-ng,
+.ext-bus-contact-authorizations-list-ng,
+.ext-bus-contact-request-list-ng {
+
+  .ellipsis {
+    @include text-overflow;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .contact-buttons {
+    position: absolute;
+    right: $gutter;
+
+    .contacts-edit-btn {
+      margin-left: $spacing;
+    }
+
+    .btn-reject {
+      margin-left: 1rem;
+    }
+  }
+
+  .contact-name {
+    padding-right: $contact-name-right-padding;
+  }
+
+  .contacts-header {
+    background-color: $white;
+    border: 1px solid $borders-color;
+    padding: $gutter;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .contacts-search {
+      min-height: 3rem;
+      input {
+        height: 100%;
+        margin: 0 (-$icon-size - $borders-width);
+        padding: 0 ($icon-size + $spacing + $borders-width);
+      }
+
+      .fa {
+        position: relative;
+
+        &:first-child {
+          left: $spacing;
+        }
+
+        &:last-child {
+          right: $spacing;
+        }
+      }
+    }
+  }
+
+  .contact-list-item {
+    border-radius: 0;
+
+    &.contact-group-char {
+      border-bottom-width: 3px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+
+    &.striped {
+      &:not(.hover-item):not(&-selected),
+      &.hover-item:not(:hover):not(:focus) {
+        background-color: $gray-200;
+      }
+    }
+
+    &-selected {
+      background-color: $component-active-bg;
+    }
+  }
+
+  .contact-group-char {
+    font-weight: bold;
+  }
+
+  .contacts-block,
+  .contact-block {
+    padding: 0;
+  }
+  @include media-breakpoint-up(lg) {
+    .contacts-block,
+    .contact-block {
+        border-right: 1px solid $borders-color;
+        min-height: $contact-panel-min-height;
+        & + div {
+          border-left: 1px solid $borders-color;
+          left: -1px;
+        }
+    }
+  }
+
+  .contacts-search-count {
+    border-top-width: 0;
+    font-size: $font-size-sm;
+  }
+
+  .contact-details-row {
+    margin-top: $gutter;
+  }
+
+  .contact-details-col {
+    margin-bottom: $gutter;
+  }
+
+  .contact-details-separator {
+    border-bottom: solid 1px $borders-color;
+  }
+
+  .contacts-form-save-btn {
+    margin-left: $spacing;
+  }
+
+  .contact-account-block,
+  .separate-block {
+    background-color: $white;
+    border: solid 1px $borders-color;
+    border-radius: $border-radius;
+    box-shadow: 0 $border-radius $border-radius -3px $borders-color;
+    margin: $gutter 0;
+    padding: $gutter;
+  }
+
+  .contact-account-bank-block {
+    margin-top: $spacing;
+  }
+
+  .contact-accounts-count {
+    margin-bottom: ($line-height-base / 2);
+    margin-top: ($line-height-base / 2);
+  }
+
+  .status {
+    text-align: center;
+    white-space: initial;
+  }
+
+  .contacts-empty {
+    height: $contact-panel-min-height;
+    text-align: center;
+    &-label {
+      color: $gray-800;
+      display: block;
+      font-size: $font-size-lg;
+      position: relative;
+      top: 50%;
+    }
+  }
+}
+
+.ext-bus-contact-authorizations-list-ng {
+  .contact-name {
+    padding-right: $contact-name-auth-right-padding;
+  }
+}

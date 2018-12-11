@@ -1,0 +1,46 @@
+/// ui-bb-avatar-ng styles ===
+$avatar-sizes-map: (
+  sm: (
+    width: 36px,
+    height: 36px,
+    font-size: 0.8rem
+  ),
+  md: (
+    width: 42px,
+    height: 42px,
+    font-size: 1.4rem
+  ),
+  lg: (
+    width: 58px,
+    height: 58px,
+    font-size: 2rem
+  ),
+  xl: (
+    width: 80px,
+    height: 80px,
+    font-size: 2rem
+  )
+);
+
+//Applied on the component entry tag (e.g. <ui-bb-avatar class=...> )
+//this allows for reuse across the entry/call-sites
+.bb-avatar {
+  @include size (48px, 48px);
+  align-items: center;
+  color: $body-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+
+  @include border-radius(50%);
+}
+
+@each $label, $map in $avatar-sizes-map {
+  .bb-avatar-#{$label} {
+    @include size (map-get($map, width), map-get($map, height));
+    span {
+      font-size: map-get($map, font-size);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<ng-include src="ext.helpers.template"></ng-include>
+
+<script type="text/ng-template" id="#ext-training-atm-list-ng/list.html">
+  <div class="ext-training-atm-list-ng" data-ng-controller="AtmListController as $ctrl">
+    <h2>ext-training-atm-list-ng</h2>
+    <div data-ng-if="ext.helpers.hasItems">
+      <div data-ng-repeat="item in ext.helpers.items track by $index">{{item}}</div>
+    </div>
+  </div>
+</script>

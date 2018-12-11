@@ -1,0 +1,8 @@
+{
+  "options": {
+      "templateUrl": [{
+        "label": "Promotion Banner",
+        "value": "$(contextRoot)/static/items/feature-training-structured-content-templates/templates/promotion-banner.html"
+      }]
+  }
+}

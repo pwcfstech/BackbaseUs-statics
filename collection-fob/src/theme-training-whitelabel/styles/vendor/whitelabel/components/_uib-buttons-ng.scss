@@ -1,0 +1,3 @@
+div[class^="uib-"] .btn-default {
+  @extend .btn-secondary;
+}

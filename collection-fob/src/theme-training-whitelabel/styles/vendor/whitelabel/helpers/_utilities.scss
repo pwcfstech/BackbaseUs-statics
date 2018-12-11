@@ -1,0 +1,13 @@
+.flex-basis {
+    -webkit-flex-basis: 100%; /* Safari 6.1+ */
+    flex-basis: 100%;
+}
+
+.break-word {
+    word-break: break-all; // IE does not support break-word :(
+    word-break: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}

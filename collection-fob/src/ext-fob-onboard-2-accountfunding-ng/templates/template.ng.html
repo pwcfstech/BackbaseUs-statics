@@ -1,0 +1,62 @@
+<div class="fob-container" ng-controller="Onboard2AccountfundingController as $ctrl">
+    <div class="fob-nav">
+        <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+    </div>
+
+    <div class="fob-main-content" ng-cloak>
+        <div style="text-align: center;">
+            <span class="logo1"></span>
+        </div>
+        <div ng-show="$ctrl.primaryScreen">
+
+            <div class="fob-top-heading-subtitle" style="color:#000;">Funding Your Account</div>
+            <div class="fob-content-text">Enter amount</div>
+            <div class="fob-account-funding-money-outerbox" style="padding-top: 2em; padding-bottom: 2em; padding-left: 2.5em;">
+                <div>
+                    <span class="fob-account-funding-money-box" style="font-size: 2em; padding-top: 0.5em; padding-bottom: 0.5em;">$</span>
+                    <input class="fob-account-funding-money-box" type="number"  placeholder="$" style="width:75%; border-style: none; border-bottom: 2px solid white; padding-top:0.5em; padding-bottom:0.5em; margin-left: 1em; text-align: center; color: white; font-weight: bolder; font-size: 2em;" name="currency" min="0" ng-focus="$ctrl.fundingAmount = 0"  ng-model="$ctrl.fundingAmount">
+                </div>
+            </div>
+            <div class="fob-content-text">From</div>
+            <br>
+            <div class="fob-account-funding-fields" style="width:100%; border-style: solid; border-width: 2px; text-align: center; padding-top: 1em; padding-bottom: 1em;">
+            <select class="fob-account-funding-fields"  style="border-style: none; width: 100%;" ng-model="$ctrl.fundingInstitution" ng-options="x for x in $ctrl.fundingInstitutions">
+            </select>
+            </div>
+            <br>
+            <div class="fob-content-text" style="padding-top: 0em;">To</div>
+            <br>
+            <div class="fob-account-funding-fields" style="width:100%; border-style: solid; border-width: 2px; text-align: center; padding-top: 1em; padding-bottom: 1em; text-align: center;">
+                <select class="fob-account-funding-fields" style="width:100%; border-style: none; ">
+                    <option value="" disabled selected>{{$ctrl.transferToBank()}}</option>
+                </select>
+            </div>
+            <form>
+                <div style="padding-top: 1.5em;">
+                    <label for="transferdate">Transfer on</label>
+                    <br>
+                    <input class="fob-account-funding-fields" style="width:100%; border-style: solid; border-width: 2px; padding-top: 1em; padding-bottom: 1em;" type="date" id="transferdate" name="transferdate" ng-model="$ctrl.transferDate">
+                </div>
+            </form>
+            <div style="padding-top: 1.5em;">
+                <div class="fob-content-text">Memo (Optional)</div>
+                ​<textarea class="fob-account-funding-fields" style="width:100%; border-style: solid; border-width: 2px;" id="txtArea" rows="3" cols="50"></textarea>
+            </div>
+            <div class="fob-next-screen-button" ng-click="$ctrl.modalOpen()" aria-hidden="true">Fund My Account</div>
+        </div>
+        <div ng-show="!$ctrl.primaryScreen">
+            <!-- <div style="text-align: center;">
+                 <span class="logo1"></span>
+
+             </div>-->
+            <div class="fob-main-content" style="text-align: center;">            
+            <div class="fob-content-text"> Success! Your account has been funded.</div>
+            <br>
+            <div class="fob-top-heading" style="text-align: center;">${{$ctrl.fundingAmount}}</div>
+            <div class="fob-content-text" style="color:black;">Account Balance</div>
+            <div class="fob-user-selection-button">Login to online banking</div>
+            <div class="fob-user-selection-button">Download the Future Bank App</div>
+        </div>
+    </div>
+    </div> <!-- main-content -->
+</div>

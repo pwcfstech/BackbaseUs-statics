@@ -1,0 +1,42 @@
+
+
+.first-cell {
+  width: 10em;
+  float: left;
+  text-align: left;
+  font-size:15px;
+}
+.second-cell {
+  width: 23.33%;
+  float: right;
+  text-align: right;
+  padding-right: 3em;
+  border-right: 1px solid #dfdfdf;
+  padding-bottom: 1em;
+  margin-right: -2em;
+}
+.third-cell {
+  width: 30%;
+  float: left;
+  text-align: left;
+  padding: 0px 1em;
+}
+.account-fee .first-cell, .account-fee .second-cell, .account-fee .third-cell {
+  color:#d986d4;
+}
+
+.fob-column {
+  float: left;
+  width: 33.33%;
+  padding: 1em;
+  max-width: 9em;
+  margin-left: auto;
+  height: 7em;
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

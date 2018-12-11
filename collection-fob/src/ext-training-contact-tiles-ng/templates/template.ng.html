@@ -1,0 +1,67 @@
+<div class="card-header row my-4">
+    <div class="col-sm-8">
+    <span class="text-muted mr-4" i18n-key="contacts.text.filter"></span>
+    <div class="btn-group btn-group-sm" role="group">
+        <!-- TODO: 1. Add a click event to apply filter if "manager" is selected -->
+        <button type="button" class="col-sm btn btn-outline-dark" ng-click="ext.helpers.applyFilter('manager')">
+        {{ 'contacts.button.filter.managers' | i18n }}
+        </button>
+        <!-- TODO: 2. Add a click event to apply filter if "employee" is selected -->
+        <button type="button" class="col-sm btn btn-outline-dark" ng-click="ext.helpers.applyFilter('employee')">
+        Employees
+        </button>
+        <!-- TODO: 3. Add a click event to apply filter if "all" is selected -->
+        <button type="button" class="col-sm btn btn-outline-dark" ng-click="ext.helpers.applyFilter()">
+        All
+        </button>
+    </div>
+    </div>
+    <div class="col-sm-4">
+    <div class="btn-group btn-group-sm float-right" role="group">
+        <button type="button" class="col-sm btn btn-outline-dark" ng-if="false">
+            Show Details
+        </button>
+        <button type="button" class="col-sm btn btn-outline-dark" ng-if="true">
+            Hide Details
+        </button>
+    </div>
+    </div>
+</div>
+<section class="col-sm-12 ext-training-contact-tiles-ng" ng-controller="ContactController as $ctrl">
+  <div class="row">
+    
+    <div class="col-sm-6 col-md-4" data-ng-repeat="contact in $ctrl.state.contacts.data">
+      <div class="card">
+        <div class="card-header bg-white text-primary text-center p-3">
+          <!-- TODO: 2. Replace the hardcoded value with name and category from the object  -->
+          <h5 class="font-weight-light mb-1 text-underline">{{ contact.name }}</h5>
+          <span class="small text-capitalize text-muted">{{ contact.category }}</span>
+        </div>
+        <div class="card-body">
+          <!-- Profile Details Section -->
+          <div>
+              <ui-training-input-group-ng input-group-class="input-group mb-3" input-type="text" icon="fa fa-envelope" value="contact.emailId" is-disabled="disabled"></ui-training-input-group-ng>
+              <!-- TODO: 4. Replace the hardcoded value with phone number from the object  -->
+              <!-- <input type="text" class="form-control" value="{{ contact.phoneNumber }}" disabled="disabled" /> -->
+              <ui-training-input-group-ng input-group-class="input-group mb-3" input-type="text" icon="fa fa-mobile" value="contact.phoneNumber" is-disabled="disabled"></ui-training-input-group-ng>
+          </div>
+        </div>
+        <!-- Actions Section -->
+        <div class="container">
+          <div class="row">
+            <!-- TODO: 5. Replace the hardcoded value with contact alias -->
+            <button type="button" title="Transfer money to {{ contact.alias }}" class="col-sm btn btn-outline-primary">
+              Transfer Money
+            </button>
+            <!-- TODO: 6. Replace the hardcoded value with contact alias -->
+            <button type="button" title="Add {{ contact.alias }} as Favorite" class="col-sm btn btn-outline-primary">
+              Add to Favorite
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /> 
+  <!-- TODO: 7. Add template to show which contact is selected -->          
+</section>

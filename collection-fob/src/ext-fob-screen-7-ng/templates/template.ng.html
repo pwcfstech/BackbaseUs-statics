@@ -1,0 +1,125 @@
+<div class="fob-gradient-secondary">
+    <div class="fob-container" style="height: 50em;" ng-controller="Screen7Controller as $ctrl">
+      <div ng-show="$ctrl.primaryScreen">
+      <div class="fob-nav">
+        <span class="fob-back-button" style="color:#8A4BA2; background:#FFF;" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+        <span class="fob-step-button" style="color:#8A4BA2; background:#FFF;">Step 2 of 5</span>
+      </div>
+
+    </div>
+        <div ng-show="$ctrl.primaryScreen">
+          <div class="fob-main-content">
+              <div style="text-align: center;">
+                  <span class="logo2"></span>
+              </div>
+            <div class="fob-top-heading" style="color: white;">Hi {{$ctrl.userInfo.firstName}}!</div>
+            <div class="fob-content-text-subtitle" style="color: white; padding-top: 0em;">Based on your goal to build an emergency fund, we recommend the following package</div>
+            <div class="fob-content-text" style="color:white; margin-bottom: 0.5em;">SELECT THE PACKAGE YOU ARE INTERESTED IN:</div>
+
+          <div id="selectPackageCarousel" class="carousel slide" data-ride="carousel"
+               style="background-color:#fff; border-radius: 4px; height: 30em;" ng-cloak>
+            <!-- Indicators -->
+            <ol class="carousel-indicators" style="bottom: -7%;">
+              <li data-target="#selectPackageCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#selectPackageCarousel" data-slide-to="1"></li>
+              <li data-target="#selectPackageCarousel" data-slide-to="2"></li>
+            </ol>
+              <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item" ng-class="{'active':slide.id == 1}" ng-repeat="slide in $ctrl.slides">
+                <div class="fob-carousel-box" style="padding-left: 1em;">
+                  <div class="fob-bold" style="font-size:1.5em; color:#000; padding-top: 0.25em;">{{slide.productName}}</div>
+                    <div class="fob-content-text" style="color:#882be7;">
+                        {{slide.productDesc}}%<span style="color:black;"> of people with similar goals have this package </span>
+
+                    </div>
+                  <div class="fob-carousel-content">
+                    <div ng-repeat="tool in $ctrl.slides[$index].tools" style="margin-bottom: 0.25em;" ng-cloak>
+                    <div >&#8226; {{tool}}</div>
+                  </div>
+                  <hr>
+                  <div ng-repeat="product in $ctrl.slides[$index].products" style="margin-bottom: 0.25em;" ng-cloak>
+                    <div>&#8226; {{product}}</div>
+                  </div>
+                  <hr>
+                  <div ng-repeat="feature in $ctrl.slides[$index].features" style="margin-bottom: 0.25em;" ng-cloak>
+                    <div>&#8226; {{feature}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+              <!-- Left and right controls -->
+          <a class="left carousel-control" href="#selectPackageCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#selectPackageCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <!--<div style="margin-top: 2em;">-->
+            <div class="fob-next-screen-button"
+                 style="margin-top: 2em;"
+                 ng-click="$ctrl.moveToNextScreen()">Select This Package</div>
+        <!--</div>-->
+      </div>
+    </div>
+
+      <div ng-show="!$ctrl.primaryScreen">
+        <div class="fob-nav">
+          <span class="fob-back-button" style="color:#8A4BA2; background:#FFF;" ng-click="$ctrl.moveToInitialScreen()" role="button" tabindex="0">&#8592;</span>
+            <span class="fob-step-button" style="color:#8A4BA2; background:#FFF;">Step 2 of 5</span>
+        </div>
+
+        <div class="fob-main-content">
+            <div style="text-align: center;">
+                <span class="logo2"></span>
+            </div>
+        <div>
+          <div class="fob-top-heading" style="color: white;">Great choice!</div>
+          <div class="fob-content-text" style="color: white; padding-top: 0em;">Depending on your average monthly balance, your account will earn the below Interest Rate:</div>
+        </div>
+          <div style="background-color:white; padding-right: 1em; padding-left: 1em; padding-top: 1em; padding-bottom: 0.25em; border-radius: 4px;">
+          <div class="row">
+              <div class="fob-column" >
+                  <span class="first-cell">Average monthly balance across your Bank accounts</span>
+              </div>
+              <div class="fob-column" >
+                  <span class="second-cell">$999 <br >or less</span>
+              </div>
+              <div class="fob-column" >
+                  <span class="third-cell">$1000 or more</span>
+              </div>
+          </div>
+          <div class="row">
+              <div class="fob-column" >
+                  <span class="first-cell">Interest Rate</span>
+              </div>
+              <div class="fob-column" >
+                  <span class="second-cell" style="padding-bottom: 15px;">.10%</span>
+              </div>
+              <div class="fob-column" >
+                  <span class="third-cell">.30%</span>
+              </div>
+          </div>
+          <div class="row">
+              <div class="fob-column account-fee">
+                  <span class="first-cell"><b>Account Monthly Fee</b></span>
+              </div>
+              <div class="fob-column account-fee">
+                  <span class="second-cell" style="padding-bottom: 5px;"><b>$0</b></span>
+              </div>
+              <div class="fob-column account-fee">
+                  <span class="third-cell"><b>$0</b></span>
+              </div>
+          </div>
+           <div class="fob-content-text">Yes, that's correct! No Account Monthly Fees, Ever.</div>
+          <div class="fob-next-screen-button"
+               ng-click="$ctrl.moveToNextScreen()">Sign Me Up</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

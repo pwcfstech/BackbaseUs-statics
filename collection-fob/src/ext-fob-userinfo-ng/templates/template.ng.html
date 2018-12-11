@@ -1,0 +1,79 @@
+<div class="fob-container" ng-controller="UserinfoController as $ctrl">
+    <div class="fob-gradient fob-main-content" ng-cloak style="padding-bottom: 3em;">
+        <div class="fob-top-heading" style="color:white; margin-bottom:1em;">
+            <div style="text-align: center;">
+                <span class="logo2"></span>
+                </div>
+            First, tell us a little bit about yourself so we can provide personalized advice.
+        </div>
+    </div>
+    <div class="fob-body-round-top fob-main-content">
+        <div style="font-size:1.25em;">
+            <span class="fob-double-spacing">I am </span>
+            <span>
+                <input style="width:2em;" class="fob-underline fob-user-input" name="age" type="text" placeholder="Age" ng-model="$ctrl.userInfoObj.age"
+                    ng-focus="$ctrl.clearText('age')" required/>
+            </span>
+            <span class="fob-double-spacing">living in </span>
+            <span class="fob-double-spacing">
+                <input style="width:8em;" class="fob-underline fob-user-input" name="postalCode" type="text" placeholder="Postal Code" ng-model="$ctrl.userInfoObj.postalCodeCityName"
+                    ng-focus="$ctrl.clearText('postalCode')" ng-blur="$ctrl.refreshCityName()" required/>
+            </span>
+            <span class="fob-double-spacing">, earning</span>
+            <span class="fob-double-spacing">
+                <select class="fob-underline fob-user-selection" ng-model="$ctrl.userInfoObj.earning" ng-options="item.alias for item in $ctrl.earningOptions track by item.amount">
+                </select>
+            </span>
+            <span class="fob-double-spacing"> a year with</span>
+            <span class="fob-double-spacing">
+                <select class="fob-underline fob-user-selection" ng-model="$ctrl.userInfoObj.investableAssets" ng-options="item.alias for item in $ctrl.investmentOptions track by item.amount">
+                </select>
+            </span>
+            <span class="fob-double-spacing">in saving and investments.
+                <span data-toggle="modal" data-target="#savingsAndInvestmentsModal" class="glyphicon glyphicon-question-sign" aria-hidden="true">
+                </span>
+            </span>
+        </div>
+
+        <div class="fob-next-screen-button" style="margin-top:3em;" ng-click="$ctrl.moveToNextScreen()">SEE WHAT WE RECOMMEND FOR YOU
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="savingsAndInvestmentsModal" tabindex="-1" role="dialog" aria-labelledby="savingsAndInvestmentsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="padding: 2em;">
+
+                <div class="fob-top-heading-subtitle">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <span class="modal-title" id="savingsAndInvestmentsLabel">What does savings and investments include?</span>
+                     <span><bold>&#8224;</bold></span> 
+                </div>
+                <div class="container">
+                    <div class="fob-content-text">
+                        <div>
+                            <i class="glyphicon glyphicon-usd"></i> Cash</div>
+                        <div>
+                            <i class="glyphicon glyphicon-piggy-bank"></i>Checking and Saving Balances</div>
+                        <div>
+                            <i class="glyphicon glyphicon-briefcase"></i> Certificate of Deposits</div>
+                        <div>
+                            <i class="glyphicon glyphicon-stats"></i> Brokerage accounts
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size:0.75em;">
+                    <span>
+                        <bold>&#8224;</bold>
+                    </span>
+                    <span>&nbsp;</span>Not including retirement accounts, real estate, or other non-liquid assets
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,228 @@
+<div class="fob-container" ng-controller="Onboard2TermsController as $ctrl">
+  <div class="fob-nav">
+    <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+    <!--<span><img src="/gateway/api/portal/static/items/ext-fob-onboard-2-terms/assets/logo1.png" width="80px" alt="PwC Logo" /></span>-->
+    <span class="fob-step-button">step 5 of 5</span>
+  </div>
+
+    <div class="fob-main-content">
+      <div style="text-align: center;">
+        <span class="logo1"></span>
+      </div>
+      <div class="fob-top-heading">Terms & Conditions</div>
+      <div class="fob-top-heading-subtitle" style="padding-top: 0.5em; color:black;">Please review the set of disclosures below and select the consent button for each one to continue submitting your application.
+        Copies of these disclosures will be sent to you at {{$ctrl.email}} </div>
+      <div>
+        <div class="fob-content-text">
+          <input type="checkbox" name="condition" ng-model="$ctrl.term1" ng-click="$ctrl.enableDisableNextButton()"> I have read and agree to the terms of the
+          <button type="button" class="btn btn-link" style="padding: 0px 0px;font-size: 13px; "
+            data-toggle="modal" data-target="#esignDisclosure">eSign Disclosure</button> and consent to receive all current and future disclosures, notices and communication regarding
+          this application or any resulting account in an electronic format.
+        </div>
+        <div class="fob-content-text">
+          <input type="checkbox" name="condition" ng-model="$ctrl.term2" ng-click="$ctrl.enableDisableNextButton()"> I have read and agree to the terms of the
+          <button type="button" class="btn btn-link" style="padding: 0px 0px;font-size: 13px; "
+            data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</button>,
+          <button type="button" class="btn btn-link" style="padding: 0px 0px;font-size: 13px; " data-toggle="modal"
+            data-target="#depositAccount">Deposit Account Agreement</button>,
+          <button type="button" class="btn btn-link" style="padding: 0px 0px;font-size: 13px; "
+            data-toggle="modal" data-target="#productTermsConditions">Product Terms and Conditions</button> and
+          <button type="button" class="btn btn-link" style="padding: 0px 0px;font-size: 13px; "
+            data-toggle="modal" data-target="#feesSchedule">Fees Schedule</button> which will govern my account relationship with Bank.
+        </div>
+        <div class="fob-content-text">
+          <input type="checkbox" name="condition" ng-model="$ctrl.term3" ng-click="$ctrl.enableDisableNextButton()">
+          I agree to terms and conditions for electronic statements and consent to receive electronic communications regarding
+            my account.
+        </div>
+      </div>
+      <div class="fob-next-screen-button" ng-style="$ctrl.nextScreenButtonColor" ng-click="open()">SUBMIT MY APPLICATION</div>
+      
+    </div>
+  </div>
+  
+  <!-- All Modal Dialogs goes under -->
+  <div class="modal fade" id="esignDisclosure" tabindex="-1" role="dialog" aria-labelledby="esignDisclosureLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <!--<div class="fob-nav">
+        <span class="fob-back-button" data-dismiss="modal" role="button" tabindex="0">&#8592;</span>
+        <span class="fob-step-button">step 5 of 5</span>
+      </div> -->
+      <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="close" style="color: black;" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="fob-top-heading">
+              <h4>eSign Disclosure</h4>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="fob-top-heading">
+              <h5>
+                <p>Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit veritus consequat mea. Perfecto
+                  neglegentur instructior mea ut. Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam
+                  concludaturque no. Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique
+                  corpora et vis.
+                  Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit veritus consequat mea. Perfecto
+                  neglegentur instructior mea ut. Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam
+                  concludaturque no. Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique
+                  corpora et vis.
+                </p>
+              </h5>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <!--Modal 2- 7b-->
+  <div class="modal fade" id="privacyPolicy" tabindex="-1" role="dialog" aria-labelledby="privacyPolicyLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="privacyPolicyLabel">Terms & Conditions</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="fob-top-heading">
+              <h4>Privacy Policy</h4>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="fob-top-heading">
+              <h5>
+                <p>Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit veritus consequat mea. Perfecto
+                  neglegentur instructior mea ut. Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam
+                  concludaturque no. Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique
+                  corpora et vis.
+                </p>
+              </h5>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <!--Modal 3- 7c-->
+  <div class="modal fade" id="depositAccount" tabindex="-1" role="dialog" aria-labelledby="depositAccountLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="depositAccountLabel">Terms & Conditions</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="fob-top-heading">
+              <h4>Deposit Account Agreement</h4>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="fob-top-heading-subtitle">
+              <p>Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit veritus consequat mea. Perfecto
+                neglegentur instructior mea ut. Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam
+                concludaturque no. Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique corpora
+                et vis.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!--Modal 4- 7d-->
+  <div class="modal fade" id="productTermsConditions" tabindex="-1" role="dialog" aria-labelledby="productTermsConditionsLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="productTermsConditionsLabel">Terms & Conditions</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="fob-top-heading">
+              Product Terms & Conditions
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="fob-top-heading-subtitle">
+              <p>Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit veritus consequat mea. Perfecto
+                neglegentur instructior mea ut. Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam
+                concludaturque no. Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique corpora
+                et vis.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <!--Modal 4- 7e-->
+  <div class="modal fade" id="feesSchedule" tabindex="-1" role="dialog" aria-labelledby="feesScheduleLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="feesScheduleLabel">Terms & Conditions</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="fob-top-heading">
+              Fee schedule
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="fob-top-heading-subtitle">
+              <p>Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit veritus consequat mea. Perfecto
+                neglegentur instructior mea ut. Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam
+                concludaturque no. Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique corpora
+                et vis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+<div class="modal fade modal-backdrop.in">
+<script type="text/ng-template" id="myModalContent.html">
+<div class="fob-main-content" style="background: linear-gradient(to right, #492A70 0%,#8A4BA2 100%); ">
+<<div style="text-align: center;">
+    <span class="logo"></span>
+  </div>
+<div style="margin-top:3em; margin-right: 5em;margin-left: 5em;">
+<div>
+<uib-progressbar max="max" value="counter"><span style="color:white; white-space:nowrap;">{{counter}} %</span></uib-progressbar>
+</div> 
+<div class="fob-top-heading-subtitle" style="color: white; text-align:center;">Sit Tight</div> 
+<div class="fob-top-heading" style="color: white; text-align:center; font-size:1.5em; padding-bottom:2em;">We're Processing Your Application</div> 
+</div>
+</script> 
+</div>
+
+  <!-- End of Modal Dialogs-->
+  
+  </div>

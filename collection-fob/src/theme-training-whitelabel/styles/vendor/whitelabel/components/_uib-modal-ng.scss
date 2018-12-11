@@ -1,0 +1,64 @@
+////
+/// Example Component
+/// @group components
+/// @author Mark de Jong
+////
+
+/// Component wrapper class
+/// === Modal Seciont ===
+/// ui-bb-modal
+//Applied on: ext-bus-accounts-overview-ng
+
+//TODO: Fold this in to main .modal styles
+// .ui-bb-configure-sa-users-modal-ng.users-table-container {
+//   max-height: 70vh;
+//   overflow-y: auto;
+// }
+
+.modal {
+  .modal-content {
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 0 rgba(0,0,0,.1);
+  }
+
+  .modal-body-scrollable {
+    max-height: $modal-max-height;
+    overflow-y: auto;
+  }
+
+  & .modal-dialog {
+    margin: 3rem auto 0;
+  }
+
+  //when toggled -- animation
+  &.in {
+    @extend .show;
+  }
+}
+
+.modal-backdrop.in {
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+@include media-breakpoint-down(sm) {
+  .modal-dialog {
+    max-width: $modal-md;
+  }
+}
+
+// hides interfering elements when printing modal
+@media print {
+  .modal-open {
+    visibility: hidden;
+    height: auto;
+
+    .modal {
+      .modal-header,
+      .modal-body {
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+////
+/// Theme Variables
+/// @group helpers
+/// @author Mark de Jong
+////
+
+/// Your new custom sass variables belong here -- which contain common data structure support for css values
+/// This is where the custom theme overrides or extends existing Backbase variables
+/// It is not recommended to directly override Bootstrap variables.
+/// Please refer to the generated sassdocs for reusable variables API documentations
+$primary: #abcdef;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);

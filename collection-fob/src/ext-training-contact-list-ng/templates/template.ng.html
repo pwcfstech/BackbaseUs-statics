@@ -1,0 +1,290 @@
+<div data-ng-controller="ContactController as $ctrl" class="ext-training-contact-list-ng">
+  <ui-bb-loading-indicator-ng data-is-loading="$ctrl.state.initialLoading" data-loading-text="{{ 'message.loading' | i18n }}">
+  <ui-bb-substitute-error-ng data-message="$ctrl.state.error.message | i18n">
+
+    <div class="notifications col-lg-4">
+      <ui-bb-notification-stripe-ng
+        data-ng-if="$ctrl.state.status"
+        data-timeout-second="{{ $ctrl.dismissTime }}"
+        data-message="{{ ext.helpers.notificationMessage($ctrl.state.status) }}"
+        data-on-close="$ctrl.state.status = null;"
+        data-type="bg-{{ $ctrl.state.status.isError ? 'danger' : 'success' }}">
+      </ui-bb-notification-stripe-ng>
+    </div>
+
+    <header class="row pb-3" data-ng-class="{ 'd-none d-md-block': $ctrl.state.page !== 'list' }">
+      <ui-bb-search-box-ng
+        class="d-block col-12 col-md-6"
+        data-config="{
+            labels: {
+              title: ('label.searchForContacts' | i18n),
+              placeholder: ('label.searchForContacts' | i18n),
+              clear: ('label.clearSearch' | i18n),
+              submit: ('label.submitSearch' | i18n),
+            }
+          }"
+        data-ng-model="$ctrl.state.contactsSearch.query"
+        data-on-submit="ext.helpers.searchContact($ctrl)"
+        data-on-clear="ext.helpers.searchContact($ctrl)"
+        data-ng-hide="!$ctrl.state.contacts.loading && !$ctrl.hasContacts()">
+      </ui-bb-search-box-ng>
+    </header>
+
+    <div class="row justify-content-center" data-ng-if="!$ctrl.hasContacts() && !$ctrl.state.contact.data">
+      <div class="tile col-md-6 col-12">
+        <h4 class="text-center" data-i18n-key="contacts.empty.title"></h4>
+        <p class="text-center">
+          <span data-i18n-key="contacts.empty.message.noContact"></span>
+          <br />
+          <span data-ng-class="{ 'd-none d-md-block': $ctrl.state.page !== 'list' }" data-i18n-key="contacts.empty.message.clickButton"></span>
+        </p>
+        <span class="col-12">&nbsp;</span>
+        <div data-ng-include="'#ext-bb-contact-list-ng/create-new-button.ng.html'"></div>
+      </div>
+    </div>
+
+    <div data-ng-if="$ctrl.hasContacts() || $ctrl.state.contact.data" class="row">
+      <div class="tile col-md-6 col-12">
+        <div data-ng-include="'#ext-bb-contact-list-ng/create-new-button.ng.html'"></div>
+        <ui-bb-empty-state-ng
+          data-ng-class="{ 'd-none d-md-block': $ctrl.state.page !== 'list' }"
+          data-icon-classes="{{ ext.helpers.getEmptyIconClasses($ctrl) }}"
+          data-title="{{ ext.helpers.getEmptyTitle($ctrl) }}"
+          data-subtitle="{{ ext.helpers.getEmptyDescription($ctrl) }}"
+          data-is-empty="ext.helpers.isContactListEmpty($ctrl)">
+          <ui-bb-loading-overlay-ng data-is-loading="ext.helpers.isSearching($ctrl)">
+            <div
+              data-ng-if="!$ctrl.state.contacts.loading"
+              data-ng-include="'#ext-bb-contact-list-ng/contact-list.ng.html'"
+              data-ng-class="{ 'd-none d-md-block': $ctrl.state.page !== 'list' }"></div>
+          </ui-bb-loading-overlay-ng>
+        </ui-bb-empty-state-ng>
+      </div>
+
+      <div class="tile col-md-6 col-12">
+        <div data-ng-switch="$ctrl.state.page">
+          <div class="d-none d-md-block" data-ng-switch-when="list">
+            <div data-ng-include="'#ext-bb-contact-list-ng/contact-details.ng.html'"></div>
+          </div>
+          <div data-ng-switch-when="details">
+            <div data-ng-include="'#ext-bb-contact-list-ng/contact-details.ng.html'"></div>
+          </div>
+          <div data-ng-switch-when="edit">
+            <div data-ng-include="'#ext-bb-contact-list-ng/contact-form.ng.html'"></div>
+          </div>
+          <div data-ng-switch-when="new">
+            <div data-ng-include="'#ext-bb-contact-list-ng/contact-form.ng.html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ui-bb-substitute-error-ng>
+  </ui-bb-loading-indicator-ng>
+
+  <ui-bb-confirm-ng
+    data-is-open="ext.cancelFormConfirmOpened"
+    data-on-confirm="ext.helpers.cancelEditForm(ext, $ctrl)"
+    data-labels="{
+      heading: ('dialog.cancelForm.titleCreate' | i18n),
+      bodyText: ('dialog.cancelForm.body' | i18n),
+      confirm: ('dialog.cancelForm.yes' | i18n),
+      cancel: ('label.cancel' | i18n)
+    }">
+  </ui-bb-confirm-ng>
+</div>
+
+<script type="text/ng-template" id="#ext-bb-contact-list-ng/create-new-button.ng.html">
+  <button
+    class="new-contact-btn btn btn-primary btn-block"
+    data-ng-click="$ctrl.showNewContactForm()"
+    data-ng-class="{ 'd-none d-md-block': $ctrl.state.page !== 'list' }">
+    {{ 'label.createNewContact' | i18n }}&nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i>
+  </button>
+</script>
+
+<script type="text/ng-template" id="#ext-bb-contact-list-ng/contact-details.ng.html">
+  <div class="row d-block d-md-none">
+    <div class="col-12 border border-top-0 border-left-0 border-right-0 mb-3">
+      <span class="btn btn-link" data-ng-click="$ctrl.closeContactDetails()" data-i18n-key="label.back"></span>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4 mb-3">
+      <p class="text-center" data-ng-bind="$ctrl.state.contact.data.name"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mb-3 text-center">
+      <ui-bb-avatar-ng
+        class="bb-avatar bb-avatar-lg rounded-circle img-thumbnail p-4 media"
+        data-ng-if="$ctrl.state.showAvatar"
+        data-name="$ctrl.state.contact.data.name"
+        data-image="$ctrl.state.contact.data.imageAvatar">
+      </ui-bb-avatar-ng>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <form class="form-horizontal col-12">
+      <div class="form-group row">
+        <div class="col-5" data-i18n-key="label.name"></div>
+        <div class="col-7" data-ng-bind="$ctrl.state.contact.data.name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-5" data-i18n-key="label.iban"></div>
+        <div class="col-7"
+          data-ng-bind="$ctrl.state.contact.data.accounts[0].IBAN"></div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <button
+        class="btn btn-outline-secondary float-right ml-2"
+        data-ng-click="$ctrl.showEditContactForm()">
+        {{ 'label.edit' | i18n }}&nbsp;<i class="fa fa-pencil-alt" aria-hidden="true"></i>
+      </button>
+      <button class="btn btn-outline-secondary float-right"
+        data-ng-click="ext.deleteConfirmOpened = true">
+        {{ 'label.delete' | i18n }}&nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <ui-bb-confirm-ng
+    data-is-open="ext.deleteConfirmOpened"
+    data-on-confirm="$ctrl.deleteContact()"
+    data-labels="{
+      heading: ('dialog.delete.title' | i18n),
+      bodyHtml: ('dialog.delete.body' | i18n: { username: $ctrl.state.contact.data.name }),
+      confirm: ('dialog.delete.yes' | i18n),
+      cancel: ('dialog.delete.no' | i18n)
+    }"
+    data-confirm-btn-class="'btn-danger'">
+  </ui-bb-confirm-ng>
+</script>
+
+<script type="text/ng-template" id="#ext-bb-contact-list-ng/contact-list.ng.html">
+  <div class="text-muted py-2"
+     data-ng-if="$ctrl.state.searching && $ctrl.hasSearchContacts()"
+     data-ng-click="ext.selectedContact = null">
+    <ng-pluralize data-count="$ctrl.state.contactsSearch.totalCount"
+      data-when="{
+        'one': ('label.resultFound' | i18n),
+        'other': ('label.resultsFound' | i18n: { count: $ctrl.state.contactsSearch.totalCount })
+      }"
+      data-role="results-found">
+    </ng-pluralize>
+  </div>
+
+  <div class="list-items-wrapper"
+    data-ng-click="ext.helpers.tryToCancelEditForm(ext, $ctrl)">
+    <ui-bb-account-card-ng
+      class="bb-account-card list-item"
+      data-account-name="contact.name"
+      data-account-image="contact.imageAvatar"
+      data-account-number="contact.accounts[0].IBAN"
+      data-show-avatar="true"
+      data-ng-repeat="contact in ext.helpers.getListData($ctrl) track by $index"
+      data-ng-click="ext.contactToSelect = contact">
+    </ui-bb-account-card-ng>
+  </div>
+  <ui-bb-load-more-ng
+    data-ng-show="$ctrl.state.searching ? $ctrl.state.contactsSearch.hasMore : $ctrl.state.contacts.hasMore"
+    data-label="{{ 'label.loadMore' | i18n }}"
+    data-on-load-more="$ctrl.state.searching ? $ctrl.searchMore(done) : $ctrl.loadMore(done)">
+  </ui-bb-load-more-ng>
+</script>
+
+<script type="text/ng-template" id="#ext-bb-contact-list-ng/contact-form.ng.html">
+  <div class="row d-block d-md-none">
+    <div class="col-12 border border-top-0 border-left-0 border-right-0 mb-3">
+      <span class="btn btn-link" data-ng-click="ext.helpers.tryToCancelEditForm(ext, $ctrl)" data-i18n-key="label.back"></span>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4 mb-3">
+      <p class="text-center" data-i18n-key="label.createNewContact" data-ng-if="$ctrl.state.page === 'new'"></p>
+      <p class="text-center"
+        data-ng-bind="$ctrl.state.contact.data.name"
+        data-ng-if="$ctrl.state.page === 'edit'">
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <ui-bb-avatar-ng
+        class="bb-avatar bb-avatar-lg rounded-circle img-thumbnail p-4 media"
+        data-ng-if="$ctrl.state.showAvatar"
+        data-name="$ctrl.state.contact.data.name"
+        data-image="$ctrl.state.contact.data.imageAvatar">
+      </ui-bb-avatar-ng>
+    </div>
+  </div>
+  <br/>
+  <form name="contactForm"
+    class="form-horizontal"
+    data-role="contact-form"
+    data-ng-submit="ext.helpers.saveContact($ctrl, contactForm)"
+    data-ui-bb-track-changes-ng="$ctrl.state.contact.data"
+    novalidate>
+    <div class="form-group">
+      <label class="col-2 control-label" data-i18n-key="label.name"></label>
+      <div class="col-10">
+        <input type="text"
+          name="name"
+          class="form-control"
+          data-ng-class="{ 'is-invalid': ext.helpers.isInvalid(contactForm, 'name') }"
+          data-ng-model="$ctrl.state.contact.data.name"
+          required="true"
+          maxlength="140"
+          data-ng-pattern="/^[ \w-+!@#$%^&()';:\[\]\.\,|]+$/"
+          aria-label="{{:: 'label.name' | i18n }}">
+          <span data-ng-messages
+            data-for="contactForm.name.$error"
+            class="invalid-feedback">
+            <ng-message data-when="required" data-i18n-key="errors.required"></ng-message>
+            <ng-message data-when="pattern" data-i18n-key="errors.namePattern"></ng-message>
+          </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-2 control-label" data-i18n-key="label.iban"></label>
+      <div class="col-10">
+        <input
+          type="text"
+          name="accountIBAN"  
+          class="form-control"
+          data-ng-class="{ 'is-invalid': ext.helpers.isInvalid(contactForm, 'accountIBAN') }"
+          data-ng-model="$ctrl.state.contact.data.accounts[0].IBAN"
+          data-ng-required="true"
+          aria-label="{{:: 'label.iban' | i18n }}"
+          data-ui-bb-iban-ng>
+          <span data-ng-messages
+            data-for="contactForm.accountIBAN.$error"
+            class="invalid-feedback"
+            role="alert">
+            <ng-message data-when="required" data-i18n-key="errors.required"></ng-message>
+            <ng-message data-when="uiBbIban" data-i18n-key="errors.invalidAccountIBAN"></ng-message>
+          </span>
+      </div>
+    </div>
+    <div class="form-group row" data-ng-init="ext.contactForm = contactForm">
+      <div class="col-12 d-flex justify-content-end">
+        <button type="button"
+          class="btn btn-link"
+          data-ng-click="ext.helpers.tryToCancelEditForm(ext, $ctrl)"
+          data-ng-disabled="$ctrl.state.contact.updating">
+            {{ 'label.cancel' | i18n }}&nbsp;<i class="fa fa-close" aria-hidden="true"></i>
+        </button>
+        <button
+          class="btn btn-primary ml-2"
+          type="submit"
+          data-ng-disabled="contactForm.$pristine || $ctrl.state.contact.updating">
+            {{ 'label.save' | i18n }}&nbsp;<i class="fa fa-check" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</script>

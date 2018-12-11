@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    <script src="$(contextRoot)/static/features/%5BBBHOST%5D/vendor-bb-systemjs/scripts/vendor-bb-systemjs.js"></script>
+    <script src="$(contextRoot)/static/features/%5BBBHOST%5D/config-bb-module-loader/scripts/config-bb-module-loader.js"></script>
+    <script src="$(contextRoot)/static/features/%5BBBHOST%5D/lib-bb-start/scripts/lib-bb-start.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  </head>
+  <body onload="BB.Widget.ngStart(__WIDGET__);">
+    <div data-ng-cloak="ng-cloak" class="widget-fob-dashboard-ng">
+      {{{datasources.extensionSource}}}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+// Basic form components
+
+button,
+.btn,
+[type=button],
+[role=button] {
+  cursor: pointer;
+}
+
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+button[disabled],
+html input[disabled],
+.disabled {
+  cursor: not-allowed;
+}
+
+// Override so that form-controls nested in form-group
+// with validation are displayed with that validation state also
+@mixin form-validation-state-nested-override($state, $color) {
+  .form-group {
+    &.is-#{$state} .form-control {
+      border-color: $color;
+
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
+      }
+
+      ~ .#{$state}-feedback,
+      ~ .#{$state}-tooltip {
+        display: block;
+      }
+    }
+  }
+}
+
+@include form-validation-state-nested-override("valid", $form-feedback-valid-color);
+@include form-validation-state-nested-override("invalid", $form-feedback-invalid-color);

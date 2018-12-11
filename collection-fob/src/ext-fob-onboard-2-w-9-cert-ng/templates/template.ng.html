@@ -1,0 +1,47 @@
+<div class="fob-container" ng-controller="Onboard2W9CertController as $ctrl">
+    <div>
+        <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">BACK</span>
+        <span class="fob-step-button">step 3 of 5</span>
+    </div>
+        <div class="fob-main-content">
+            <div class="fob-top-heading">Electronic W9 Certification</div>
+            <div class="fob-top-heading-subtitle">Review and confirm agreement.</div>
+            <div class="fob-content-text" style="font-weight: bold;">I certify, under penalty of perjury that:</div>
+            <div class="fob-content-text" >
+                Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit
+                veritus consequat mea. Perfecto neglegentur instructior mea ut. Vel in omnes intellegat. Est ea
+                volutpat vituperata reprimique, sea audiam concludaturque no. Per aperiam copiosae petentium ut,
+                quo doctus persecuti disputationi no, simul ubique corpora et vis.
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">1. </span>
+                <span>Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit.</span>
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">2. </span>
+                <span >An delenit veritus consequat mea. Perfecto neglegentur instructior mea ut. Vel in omnes intellegat.</span>
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">3. </span>
+                <span>Est ea volutpat vituperata reprimique, sea audiam concludaturque no.</span>
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">4. </span>
+                <span>
+                    Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique corpora et vis.
+                </span>
+            </div>
+            <div class="fob-content-text" style="font-weight: bold;">I Agree that I will submit: ...</div>
+            <div class="fob-content-text">
+                An delenit veritus consequat mea. Perfecto neglegentur instructior mea ut.
+                Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam concludaturque no.
+            </div>
+            <div class="fob-user-selection-button" style="text-align: center;margin-bottom: 1.0em;"
+                    ng-click="$ctrl.agreeAlert()">I do not agree</div>
+
+            <div class="fob-next-screen-button"
+                    style="margin-bottom: 1.5em; margin-top: 0em;"
+                    ng-click="$ctrl.moveToNextScreen()">I Agree</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+////
+/// Example Component
+/// @group components
+/// @author Mark de Jong
+////
+
+/// Component wrapper class
+/// === Tooltip Seciont ===
+//Applied on: ext-bb-product-details-ng
+.tooltip {
+  &.in { 
+    @extend .tooltip.show;
+  }
+}

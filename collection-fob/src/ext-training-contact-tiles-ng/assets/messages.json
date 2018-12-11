@@ -1,0 +1,47 @@
+{
+  "en-US": {
+      "contacts.text.filter": "Search Contacts by category:",
+      "contacts.button.filter.managers": "Managers",
+      "contacts.button.filter.employees": "Employees",
+      "contacts.button.filter.all": "All",
+      "contacts.button.filter.show.details": "Show Details",
+      "contacts.button.filter.hide.details": "Hide Details",
+      "contacts.button.transfer.money": "Transfer Money",
+      "contacts.button.add.to.favorite": "Add to Favorite",
+      "contacts.button.title.transfer.money": "Transfer money to {alias}",
+      "contacts.button.title.add.to.favorite": "Add {alias} to Favorites",
+      "contacts.text.selected.contact": "Selected Contact:",
+      "contacts.category.manager": "Manager",
+      "contacts.category.employee": "Employee"
+  },
+  "nl-NL": {
+      "contacts.text.filter": "Zoek Contacten op categorie:",
+      "contacts.button.filter.managers": "Managers",
+      "contacts.button.filter.employees": "Medewerkers",
+      "contacts.button.filter.all": "Allen",
+      "contacts.button.filter.show.details": "Details Weergeven",
+      "contacts.button.filter.hide.details": "Details Verbergen",
+      "contacts.button.transfer.money": "Geld Overmaken",
+      "contacts.button.add.to.favorite": "Favoriet Toevoegen",
+      "contacts.button.title.transfer.money": "Geld overmaken aan {alias}",
+      "contacts.button.title.add.to.favorite": "Voeg {alias} toe aan Favorieten",
+      "contacts.text.selected.contact": "Geselecteerde Contact:",
+      "contacts.category.manager": "Manager",
+      "contacts.category.employee": "Medewerker"
+  },
+  "ru-RU": {
+      "contacts.text.filter": "Поиск контактов по категориям::",
+      "contacts.button.filter.managers": "Менеджеры",
+      "contacts.button.filter.employees": "Работники",
+      "contacts.button.filter.all": "Все",
+      "contacts.button.filter.show.details": "Показать подробную информацию",
+      "contacts.button.filter.hide.details": "Скрыть подробную информацию",
+      "contacts.button.transfer.money": "Перевести деньги",
+      "contacts.button.add.to.favorite": "Добавить в избранное",
+      "contacts.button.title.transfer.money": "Перевести деньги {alias}",
+      "contacts.button.title.add.to.favorite": "Добавить {alias} в избранное",
+      "contacts.text.selected.contact": "Выбранный контакт:",
+      "contacts.category.manager": "Менеджер",
+      "contacts.category.employee": "Работник"
+  }
+}

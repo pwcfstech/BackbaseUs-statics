@@ -1,0 +1,95 @@
+
+<div class="fob-container" ng-controller="Onboard2Screen4Controller as $ctrl">
+    <div class="fob-nav">
+        <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+        <!--<span><img src="/gateway/api/portal/static/items/ext-fob-onboard-2-terms/assets/logo1.png" width="80px" alt="PwC Logo" /></span>-->
+        <span class="fob-step-button">step 3 of 5</span>
+    </div>
+
+    <div class="fob-main-content" ng-cloak>
+        <div style="text-align: center;">
+            <span class="logo1"></span>
+        </div>
+        <div class="fob-top-heading">Personal Information</div>
+        <div style="padding-top:0; padding-bottom:0;" class="fob-content-text">We require some additional information to validate your identity. This should only take a minute.</div>
+
+        <div class="fob-bold fob-content-text">Social Security Number</div>
+        <div style="padding-top:0.5em; padding-bottom:0.5em;" class="fob-content-text">US Federal regulations require us to obtain your Social Security number to confirm your identity and prevent money-laundering.</div>
+        <div>
+                <input class="fob-block-box fob-user-input" name="ssid1" maxlength="11" ng-keyup="$ctrl.SSID1=$ctrl.formatSsn($ctrl.SSID1);" placeholder="Social Security Number" type="text" ng-model="$ctrl.SSID1">
+        </div>    
+        <div>
+                <input class="fob-block-box fob-user-input" name="ssid2" maxlength="11" ng-keyup="$ctrl.SSID2=$ctrl.formatSsn($ctrl.SSID2);" type="text" placeholder="Confirm Social Security Number" ng-model="$ctrl.SSID2">
+        </div>
+    <div>
+        <div class="fob-bold fob-content-text">Select Your Citizenship Status</div>
+        <div>
+            <div class="fob-user-selection-button" style="text-align: center;" ng-click="$ctrl.citizenship('USCITIZEN')" ng-class="$ctrl.screenButtonColor1" ng->I AM A U.S. CITIZEN</div>
+            <div class="fob-user-selection-button" style="text-align: center;" ng-class="$ctrl.screenButtonColor2" ng-click="$ctrl.citizenship('PERMRESIDENT')">I AM A PERMANENT RESIDENT</div>
+            <div class="fob-user-selection-button" style="text-align: center;"ng-class="$ctrl.screenButtonColor3" ng-click="$ctrl.citizenship('NEITHER')" >I AM NEITHER</div>
+        </div>
+    </div>
+    <div class="fob-next-screen-button" style="margin-top:3em;" data-toggle="modal" data-target="#w9">Next</div>
+</div>
+
+<!-- All Modal Dialogs goes under -->
+<div class="modal fade" id="w9" tabindex="-1" role="dialog" aria-labelledby="w9" aria-hidden="true">
+
+
+    <div class="fob-main-content" style="background: white;">
+        <div class="fob-nav">
+            <span class="fob-back-button" data-dismiss="modal" role="button" tabindex="0">&#8592;</span>
+           <span class="fob-step-button">step 3 of 5</span>
+        </div>
+
+        <div class="fob-top-heading"> </div>
+        <div style="text-align: center;">
+            <span class="logo1"></span>
+        </div>
+            <div class="fob-top-heading">Electronic W9 Certification</div>
+            <div>
+              <div class="fob-content-text" style="font-weight: bold; padding-bottom: 0em;">{{$ctrl.flname}}</div>
+              <br>
+            <div class="fob-content-text" style="font-weight: bold; padding-top: 0em;">{{$ctrl.SSID1}}</div>  
+            </div>
+            
+            <div class="fob-content-text" >
+                Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit. An delenit
+                veritus consequat mea. Perfecto neglegentur instructior mea ut. Vel in omnes intellegat. Est ea
+                volutpat vituperata reprimique, sea audiam concludaturque no. Per aperiam copiosae petentium ut,
+                quo doctus persecuti disputationi no, simul ubique corpora et vis.
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">1. </span>
+                <span>Lorem ipsum dolor sit amet, id propriae evertitur intellegebat sit.</span>
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">2. </span>
+                <span >An delenit veritus consequat mea. Perfecto neglegentur instructior mea ut. Vel in omnes intellegat.</span>
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">3. </span>
+                <span>Est ea volutpat vituperata reprimique, sea audiam concludaturque no.</span>
+            </div>
+            <div class="fob-content-text" style="padding-left: 2em; padding-right: 2em;">
+                <span style="font-weight: bold;">4. </span>
+                <span>
+                    Per aperiam copiosae petentium ut, quo doctus persecuti disputationi no, simul ubique corpora et vis.
+                </span>
+            </div>
+            <div class="fob-content-text" style="font-weight: bold;">I Agree that I will submit: ...</div>
+            <div class="fob-content-text">
+                An delenit veritus consequat mea. Perfecto neglegentur instructior mea ut.
+                Vel in omnes intellegat. Est ea volutpat vituperata reprimique, sea audiam concludaturque no.
+            </div>
+            <div style="padding-bottom: 1em; display:flex;">
+                <div class="fob-user-selection-disagree-button" style="text-align: center; margin-bottom: 0; margin-top: 0; margin-right: 0.5em;"
+                    ng-click="$ctrl.agreeAlert()">I do not agree</div>
+
+                <div class="fob-next-screen-button"
+                    style="text-align: center; margin-bottom: 0; margin-top: 0; flex-grow: 1;"
+                    ng-click="$ctrl.moveToNextScreen()">I Agree</div>
+            </div>
+        </div>
+    </div>
+</div>

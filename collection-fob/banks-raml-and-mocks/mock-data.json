@@ -1,0 +1,84 @@
+{
+  "locations": [
+    {
+      "coordinates": {
+        "latitude": 52.366886,
+        "longitude": 4.915426
+      },
+      "address": {
+        "nameOrNumber": "43",
+        "country": "The Netherlands",
+        "postcode": "1018 DC",
+        "street": "Plantage Middenlaan",
+        "town": "Amsterdam"
+      },
+      "id": "1",
+      "name": "Customer Care ATM",
+      "type": "atm"
+    },
+    {
+      "coordinates": {
+        "latitude": 40.71816,
+        "longitude": -74.00085
+      },
+      "address": {
+        "nameOrNumber": "Suite 325",
+        "country": "USA",
+        "postcode": "10013",
+        "street": "10 10th Street",
+        "town": "Atlanta"
+      },
+      "id": "2",
+      "name": "Retail Banking - Main Office",
+      "type": "atm"
+    },
+    {
+      "coordinates": {
+        "latitude": 40.72847,
+        "longitude": -74.0054
+      },
+      "address": {
+        "nameOrNumber": "Ardenham Court",
+        "country": "United Kingdom",
+        "postcode": "HP19 8HT",
+        "street": "1 Oxford Road",
+        "town": "London"
+      },
+      "id": "3",
+      "name": "Customer Care ATM",
+      "type": "atm"
+    },
+    {
+      "coordinates": {
+        "latitude": 40.72152,
+        "longitude": -73.99574
+      },
+      "address": {
+        "nameOrNumber": "INIT building",
+        "country": "The Netherlands",
+        "postcode": "1018 LL",
+        "street": "Jacob Bontiusplaats 9",
+        "town": "Amsterdam"
+      },
+      "id": "4",
+      "name": "Corporate Headquarters",
+      "type": "atm"
+    },
+    {
+      "coordinates": {
+        "latitude": 40.71909,
+        "longitude": 28
+      },
+      "address": {
+        "nameOrNumber": "26",
+        "country": "USA",
+        "postcode": "10278",
+        "street": "Federal Plaza",
+        "town": "Atlanta"
+      },
+      "id": "5",
+      "name": "Wealth Banking - Main Office",
+      "type": "atm"
+    }
+  ]
+}

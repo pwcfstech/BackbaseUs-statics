@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login widget</title>
+    <script src="$(contextRoot)/static/items/vendor-bb-systemjs/scripts/vendor-bb-systemjs.js"></script>
+    <script src="$(contextRoot)/static/items/config-bb-module-loader/scripts/config-bb-module-loader.js"></script>
+    <script src="$(contextRoot)/static/items/lib-bb-start/scripts/lib-bb-start.js"></script>
+  </head>
+  <body onload="BB.Widget.ngStart(__WIDGET__);">
+    <div data-ng-cloak="ng-cloak" class="widget-bb-login-ng">
+      {{{datasources.extensionSource}}}
+    </div>
+  </body>
+</html>

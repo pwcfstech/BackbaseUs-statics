@@ -1,0 +1,8 @@
+{
+  "options": {
+      "templateUrl": [{
+        "label": "Media Article",
+        "value": "$(contextRoot)/static/items/feature-training-content-templates/templates/media-article.html"
+      }]
+  }
+}

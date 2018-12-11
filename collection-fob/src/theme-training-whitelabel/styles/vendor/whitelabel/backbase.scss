@@ -1,0 +1,19 @@
+//ENTRY POINT: Backbase Default Theme layer -- the look and feel of backbase, out-of-the-box.
+
+//GUIDELINE: Specific styling to a single component or extension/template is reserved for then add minimal styling for a particular components sass file
+
+//Otherwise, always stick to reusing the defined helpers as exposed in backbase theme
+
+//TIP: Helpers are imported inside the vendor.scss entry point, due to load order sequencing
+
+//Cross-browser Style Resets/Normalization
+@import 'base/base.scss';
+
+//Specific Layouts Styling Layer
+@import 'layouts/layouts.scss';
+
+//Specific Templates/Extensions Styling Layer -- specifically 'ext-' prefixed styling
+@import 'templates/templates.scss';
+
+//Specific Components Styling Layer -- specifically 'ui-' prefixed styling
+@import 'components/components.scss';

@@ -1,0 +1,73 @@
+body {
+	font-family: 'Montserrat';
+    font-size: 22px;
+    background:#82CDD5;
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+.top-content-wrapper {
+	padding:20px 15px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#026282+0,8a4ba2+100 */
+	background: rgb(2,98,130); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(2,98,130,1) 0%, rgba(138,75,162,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(2,98,130,1) 0%,rgba(138,75,162,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(2,98,130,1) 0%,rgba(138,75,162,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#026282', endColorstr='#8a4ba2',GradientType=0 ); /* IE6-9 */
+}
+.user-avatar {
+	width:75px;
+	height:75px;
+	border-radius:50%;
+	background: #dfdfdf;
+	margin: 0 auto 15px;
+}
+.nav-links ul {
+	margin:0px;
+	padding:0px;
+}
+.nav-links ul li.active {
+	color:#fff;
+}
+.nav-links ul li {
+	list-style-type: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    color:#c0c0c0;
+    padding: 0px 4px;
+}
+
+.content-wrapper {
+	padding:0px 15px;
+	text-align: left;	
+}
+
+.box {
+	background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom:20px;
+}
+.box h4 {
+	margin-top:0px;
+	color:#d986d4;
+}
+.progress-text {
+	font-size: 15px;
+    color: #000;
+}
+.inner-box {
+	border: 1px solid #dfdfdf;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0px 10px 0px;
+}
+.text-link {
+	text-transform: uppercase;
+	color:#82cdd5;
+	font-size:15px;
+	font-weight: bold;	
+}

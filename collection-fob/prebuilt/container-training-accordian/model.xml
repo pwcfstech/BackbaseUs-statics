@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <container>
+        <name>container-training-accordian</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property name="viewNamespace" type="string">
+                <value>templates_</value>
+            </property>
+            <property name="title" type="string" label="Title" viewHint="role=admin,designModeOnly">
+                <value>Accordian Container</value>
+            </property>
+            <property name="thumbnailUrl" type="string">
+                <value>$(itemRoot)/media/icon.png</value>
+            </property>
+            <property name="src" type="string">
+                <value>$(itemRoot)/index.hbs</value>
+            </property>
+
+        </properties>
+        <tags>
+            <tag type="section">Training Collection</tag>
+            <tag type="regular">training-collection</tag>
+        </tags>
+    </container>
+</catalog>

@@ -1,0 +1,16 @@
+<div class="fob-container" ng-controller="Onboard2CongratsController as $ctrl">
+  <div class="fob-main-content" ng-cloak>
+    <div style="text-align: center; padding-bottom: 2em;">
+      <span class="logo1"></span>
+        <!--<img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboard-2-congrats-ng/assets/logo1.png" width="80px" alt="Logo" />--> 
+    </div>
+    <div class="fob-top-heading">Congratulations, {{$ctrl.userInfo.firstName}}!</div>
+    <div class="fob-content-text">Your account is ready - let's finish setting up your account so we can help achieve your financial goals.</div>
+    <div class="fob-content-text">How would you like to fund your account?</div>
+      <div style="text-align:center;" class="fob-user-selection-button" ng-click="$ctrl.moveToNextScreen()">TRANSFER FUNDS FROM ANOTHER BANK</div>
+      <div style="text-align:center;" class="fob-user-selection-button" ng-click="$ctrl.moveToNextScreen()">DIRECT DEPOSIT</div>
+      <div style="text-align:center;" class="fob-user-selection-button" ng-click="$ctrl.moveToNextScreen()">VENMO OR PAYPAL</div>
+      <div style="text-align:center;" class="fob-user-selection-button" ng-click="$ctrl.moveToNextScreen()">FIND A NEARBY BRANCH TO MAKE A CASH/CHECK DEPOSIT</div>
+      <div class="fob-top-heading-subtitle" style="text-decoration: underline; font-size: 1em; padding-top: 1em;">Fund later and log into online banking</div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+/**
+ * --------------------------------------------------------------------------
+ * UI BB Chart.js chart component
+ * --------------------------------------------------------------------------
+ * @name ui-bb-chartjs-chart-*-ng
+ * @description
+ * General styles for chartjs charts
+ *
+ */
+
+@include generate-chart-color-classes($chart-colors);
+
+.chart-positive-color {
+  color: $chart-positive-color;
+}
+.chart-positive-background {
+  background-color: $chart-positive-color;
+}
+
+.chart-negative-color {
+  color: $chart-negative-color;
+}
+.chart-negative-background {
+  background-color: $chart-negative-color;
+}
+
+.chart-primary-color {
+  color: $chart-primary-color;
+}
+.chart-primary-background {
+  background-color: $chart-primary-color;
+}

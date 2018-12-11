@@ -1,0 +1,40 @@
+/**
+ * --------------------------------------------------------------------------
+ * UI BB Chart.js line chart component
+ * --------------------------------------------------------------------------
+ * @name ui-bb-chartjs-chart-line-ng
+ * @description
+ * Chart.js line chart UI component
+ *
+ * Some styles are read inside code that generates canvas.
+ * Examples for that kind of styles cannot be provided.
+ *
+ * @example
+ * <ui-bb-chartjs-chart-line-ng>
+ *   <canvas width="660" height="660"></canvas>
+ * </ui-bb-chartjs-chart-line-ng>
+ */
+
+@include generate-chart-color-classes($chart-colors);
+
+.chart-line {
+  /*
+  * Chart Card line styles
+  * using line chart in card view
+  */
+  &-card-positive-color {
+    color: lighten($blue, 30%);
+  }
+
+  &-card-positive-background {
+    background-color: lighten($blue, 50%);
+  }
+
+  &-card-y-axis-zero-color {
+    color: lighten($blue, 10%);
+  }
+
+  &-card-y-axes-grid-color{
+    color: $white;
+  }
+}

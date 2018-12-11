@@ -1,0 +1,737 @@
+<style>
+
+  
+  body {
+      font-family: 'Montserrat';
+      font-size: 22px;
+      height: 100vh;
+      color: #000;
+      
+       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#026282+5,026282+6,0092ac+80,0092ac+80,0092ac+100,4096ee+100,0092ac+101 */
+      background:white /* Old browsers */
+      /*
+      background: -moz-linear-gradient(top, rgba(2,98,130,1) 5%, rgba(2,98,130,1) 6%, rgba(0,146,172,1) 80%, rgba(0,146,172,1) 80%, rgba(0,146,172,1) 100%, rgba(64,150,238,1) 100%, rgba(0,146,172,1) 101%); 
+      background: -webkit-linear-gradient(top, rgba(2,98,130,1) 5%,rgba(2,98,130,1) 6%,rgba(0,146,172,1) 80%,rgba(0,146,172,1) 80%,rgba(0,146,172,1) 100%,rgba(64,150,238,1) 100%,rgba(0,146,172,1) 101%); 
+      background: linear-gradient(to bottom, rgba(2,98,130,1) 5%,rgba(2,98,130,1) 6%,rgba(0,146,172,1) 80%,rgba(0,146,172,1) 80%,rgba(0,146,172,1) 100%,rgba(64,150,238,1) 100%,rgba(0,146,172,1) 101%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#026282', endColorstr='#0092ac',GradientType=0 );  IE6-9 */
+    }
+  
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+  
+    .card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      min-height: 180px;
+    }
+  
+  
+  
+    .cardcontainer {
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
+      grid-column-gap: 10px;
+      max-width: 800px;
+      width: 100%;
+    }
+    .cardcontainer > div {
+      background-color:white;
+    }
+    .first,.second, .third {
+      width:250px;
+      height: 300px;
+    }
+  
+    .logo  {
+      padding: 20px 0;
+    }
+    .top-heading {
+      color:black;
+      margin-top: -20px;
+      text-align: left;
+    }
+    .top-heading h3 {
+      line-height: 10px;
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+  
+    .top-heading h4 {
+      line-height: 20px;
+      margin-top: -29px;
+      margin-bottom: 25px;
+      text-align: left;
+      font-size:small;
+    }
+  
+    .action-btn-div {
+      margin-top:20px;
+    }
+    .action-btn-div button {
+        display: block;
+        margin: 0px auto 15px;
+        min-width: 250px;
+        width: 100%;
+    }
+    .carousel-box {
+      border: 1px solid #dfdfdf;
+      background: #fff;
+      border-radius: 6px;
+      width: 100%;
+      margin-bottom: 60px;
+      box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    }
+    .carousel-inner {
+      max-width: 550px;
+      margin: auto;
+    }
+    .carousel-indicators {
+      bottom: 10px;
+    }
+    .right.carousel-control, .left.carousel-control {
+        display: none;
+    }
+    .btn-white {
+      background: #fff;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #0092AC;
+      font-weight: bold;
+      padding: 10px 28px;
+    }
+    .carousel-content {
+      padding: 20px 25px;
+    }
+    .carousel-content h3,.carousel-content p {
+      text-align: left;
+      color:#8a4ba2;
+      font-weight: bold;
+    }
+    .carousel-content p {
+      font-size: 15px;
+      color:#000;
+      margin-top:25px;
+    }
+
+     .top-heading h4 {
+    line-height: 20px;
+    margin-top: 1em;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size:medium;
+    font-weight: bold;
+    
+  }
+
+   .top-heading h5 {
+    line-height: 20px;
+    margin-top: 1em;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size:small;
+    font-weight: normal;
+  }
+
+  .navbar-steps {
+    line-height: 20px;
+    margin-top: 1em;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size:medium;
+    font-weight: normal;
+  }
+  .form-group {
+    margin-bottom: 15px;
+    width: 14em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.custom-select{
+    background-color:#2473A6;
+    background-size:10% 50%;
+    color:#FAFAFA;
+    border-radius: 0px 0px 0px;
+    height:30px;
+    width:100%;
+    border:0px;
+}
+.custom-select option,option{
+    background: #CFD8DC;
+    color:rgb(91, 192, 222);
+    border:0px;
+    border-bottom:1px solid #BDC3C7;
+    height:30px;
+} 
+
+select {
+    cursor:pointer;
+    display:inline-block;
+    position:relative;
+    font:normal 11px/22px Arial, Sans-Serif;
+    color:black;
+    border:1px solid #ccc;
+}
+.styledSelect {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color:white;
+    padding:0 10px;
+    font-weight:bold;
+}
+.styledSelect:after {
+    content:"";
+    width:0;
+    height:0;
+    border:5px solid transparent;
+    border-color:black transparent transparent transparent;
+    position:absolute;
+    top:9px;
+    right:6px;
+}
+.styledSelect:active, .styledSelect.active {
+    background-color:#eee;
+}
+.options {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    z-index:999;
+    margin:0 0;
+    padding:0 0;
+    list-style:none;
+    border:1px solid #ccc;
+    background-color:white;
+    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.options li {
+    padding:0 6px;
+    margin:0 0;
+    padding:0 10px;
+}
+.options li:hover {
+    background-color:#39f;
+    color:white;
+}
+
+p {
+    margin: 0px 9px 30px;
+}
+ .label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: small;
+    color: #026282;
+    margin-right: 11em;
+    margin-left: -7em;
+    align-self: left;
+}
+ 
+
+.progress{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+.progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.progress .progress-left{
+    left: 0;
+}
+.progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progress .progress-right{
+    right: 0;
+}
+.progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.progress .progress-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #44484b;
+    font-size: 24px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.progress.blue .progress-bar{
+    border-color: #049dff;
+}
+.progress.blue .progress-left .progress-bar{
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+.progress.yellow .progress-bar{
+    border-color: #fdba04;
+}
+.progress.yellow .progress-left .progress-bar{
+    animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.pink .progress-bar{
+    border-color: #ed687c;
+}
+.progress.pink .progress-left .progress-bar{
+    animation: loading-4 0.4s linear forwards 1.8s;
+}
+.progress.green .progress-bar{
+    border-color: #1abc9c;
+}
+.progress.green .progress-left .progress-bar{
+    animation: loading-5 1.2s linear forwards 1.8s;
+}
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
+    }
+}
+@media only screen and (max-width: 990px){
+    .progress{ margin-bottom: 20px; }
+}
+
+.pie {position: relative;display: inline-block;background-image: conic-gradient(rgba(0,0,0,0) calc(3.6deg * var(--percent)),rgba(0,0,0,1) calc(3.6deg * var(--percent)));background-blend-mode: overlay;background-position: 50% 50%;background-size: 150%;width: 3.75em;height: 3.75em;border-radius: 50%;}
+
+/* show the percentage (thanks to Ana Tudor for the counter() trick) */
+.pie--value::after {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);counter-reset: percent var(--percent);content: counter(percent) "%";color: #fff;text-shadow: 1px 1px 1px #000;}
+.pie--disc::before {content: '';position: absolute;top: .5em;left: .5em;right: .5em;bottom: .5em;border-radius: 50%;background: #fff;}
+.pie--disc::after {color: #000;text-shadow: none;}
+
+/* demo styles
+----------------------------------------------------- */
+body::before {color: red;font-size: 150%;background-color: #f1f1f2;content: "";}
+@supports (background: conic-gradient(red, blue)) {body::before {content: '';}}
+
+.pie {border: .15em solid #fff;box-shadow: 0 .075em .2em .05em rgba(0,0,0,.25);margin: .75rem;}
+.pie:nth-child(1) {background-color: #d44;}
+.pie:nth-child(2) {background-color: #fc3;}
+.pie:nth-child(3) {background-color: #ac0;}
+.pie:nth-child(4) {background-color: #0ac;}
+.pie:nth-child(5) {background-color: #d6b;}
+.big {font-size: 200%;}
+.med {font-size: 150%;}
+.sml {font-size: 100%;}
+
+
+
+
+/* JQuery plugin*/
+.circular-progress-bar {
+  position: relative;
+  margin: 0 auto;
+  transform: rotate(-90deg);
+}
+
+.progress-percentage, .progress-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  text-align: center;
+  padding: 0px 60px;
+}
+
+.progress-percentage {
+  font-size: 60px;
+  left: 60%;
+}
+
+.progress-text {
+  left: 35%;
+  color: #585858;
+  font-size: 21px;
+}
+
+
+
+
+</style>
+<script>
+
+function loop(t) {
+  requestAnimationFrame(loop);
+  updateCharts(Math.floor(t / 16) % 100);
+}
+
+function updateCharts(value) {
+  charts.forEach(chart => setChartValue(chart, value));
+}
+
+function setChartValue(chart, value) {
+  chart.style.setProperty('--percent', value);
+}
+
+let charts = document.querySelectorAll('.js');
+
+loop();
+
+
+
+(function ( $ ) {
+
+var global_settings = {};
+
+var methods = {
+    init : function(options) {
+        // This is the easiest way to have default options.
+        var settings = $.extend({
+            // These are the defaults.
+            color: "#000000",
+            height: "300px",
+            width: "300px",
+            line_width: 8,
+            starting_position: 25,
+            percent: 100,
+            counter_clockwise: false,
+            percentage: true,
+            text: ''
+        }, options );
+        global_settings = settings;
+
+
+        // Create percentage
+        var percentage = $("<div class='progress-percentage'></div>");
+        
+        if(!global_settings.percentage) {
+            percentage.text(global_settings.percentage);
+        }
+        $(this).append(percentage);
+
+
+        // Create text
+        var text = $("<div class='progress-text'></div>");
+        
+        // Custom text
+        if(global_settings.text != "percent") {
+            text.text(global_settings.text);
+        }
+        $(this).append(text);
+
+        // Correct any invalid values
+        if(global_settings.starting_position != 100) {
+            global_settings.starting_position = global_settings.starting_position % 100;
+        }
+        if(global_settings.ending_position != 100) {
+            global_settings.ending_position = global_settings.ending_position % 100;
+        }
+        // No 'px' or '%', add 'px'
+        appendUnit(global_settings.width);
+        appendUnit(global_settings.height);
+
+        // Apply global_settings
+        $(this).css({
+            "height": global_settings.height,
+            "width": global_settings.width
+        });
+        $(this).addClass("circular-progress-bar");
+
+        // Remove old canvas
+        $(this).find("canvas").remove();
+
+        // Put canvas inside this
+        $(this).append(createCanvas($(this)));
+
+        // Return allows for chaining
+        return this;
+    },
+    percent : function(value) {
+        // Change percent
+        global_settings.percent = value;
+        // Apply global_settings
+        $(this).css({
+            "height": global_settings.height,
+            "width": global_settings.width
+        });
+        // Remove old canvas
+        $(this).children("canvas").remove();
+        // Put canvas inside this
+        $(this).append(createCanvas($(this)));
+
+        // Return allows for chaining
+        return this;
+    },
+    animate : function(value, time) {
+        // Apply global_settings
+        $(this).css({
+            "height": global_settings.height,
+            "width": global_settings.width
+        });
+
+        // Number of intervals, 10ms interval
+        var num_of_steps = time / 10;
+        // Amount of change each step
+        var percent_change = (value - global_settings.percent) / num_of_steps;
+
+        // Variable conflict, rename this
+        var scope = $(this);
+        var theInterval = setInterval(function() {
+            if(global_settings.percent < value) {
+                // Remove old canvas
+                scope.children("canvas").remove();
+                // Increment percent
+                global_settings.percent += percent_change;
+                // Put canvas inside this
+                scope.append(createCanvas(scope));
+            } else {
+                clearInterval(theInterval);
+            }
+        }, 10);
+
+        // Return allows for chaining
+        return this;
+    }
+};
+
+$.fn.gmpc = function(methodOrOptions) {
+    if (methods[methodOrOptions]) {
+        // Method found
+        return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof methodOrOptions === 'object' || !methodOrOptions) {
+        // Default to "init", object passed in or nothing passed in
+        return methods.init.apply( this, arguments );
+    } else {
+        $.error('Method ' +  methodOrOptions + ' does not exist.');
+    }
+};
+
+/* =========================================================================
+    PRIVATE FUNCTIONS
+========================================================================= */
+
+// return string without 'px' or '%'
+function removeUnit(apples) {
+    if(apples.indexOf("px")) {
+        return apples.substring(0, apples.length - 2);
+    } else if(canvas_height.indexOf("%")) {
+        return apples.substring(0, apples.length - 1);
+    }
+};
+// return string with 'px'
+function appendUnit(apples) {
+    if(apples.toString().indexOf("px") < -1 && apples.toString().indexOf("%") < -1) {
+        return apples += "px";
+    }
+};
+// calculate starting position on canvas
+function calcPos(apples, percent) {
+    if(percent < 0) {
+        // Calculate starting position
+        var starting_degree = (parseInt(apples) / 100) * 360;
+        var starting_radian = starting_degree * (Math.PI / 180);
+        return starting_radian - (Math.PI / 2);
+    } else {
+        // Calculate ending position
+        var ending_degree = ((parseInt(apples) + parseInt(percent)) / 100) * 360;
+        var ending_radian = ending_degree * (Math.PI / 180);
+        return ending_radian - (Math.PI / 2);
+    }
+};
+// Put percentage or custom text inside progress circle
+function insertText(scope) {
+    $(".progress-percentage").text(Math.round(global_settings.percent) + "%");
+}
+// create canvas
+function createCanvas(scope) {
+    // Remove 'px' or '%'
+    var canvas_height = removeUnit(global_settings.height.toString());
+    var canvas_width = removeUnit(global_settings.width.toString());
+
+    // Create canvas
+    var canvas = document.createElement("canvas");
+    canvas.height = canvas_height;
+    canvas.width = canvas_width;
+
+    // Create drawable canvas and apply properties
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = global_settings.color;
+    ctx.lineWidth = global_settings.line_width;
+
+    // Draw arc
+    ctx.beginPath();
+
+    // Calculate starting and ending positions
+    var starting_radian = calcPos(global_settings.starting_position, -1);
+    var ending_radian = calcPos(global_settings.starting_position, global_settings.percent);
+    // Calculate radius and x,y coordinates
+    var radius = 0;
+    var xcoord = canvas_width / 2;
+    var ycoord = canvas_height / 2;
+    // Height or width greater
+    if(canvas_height >= canvas_width) {
+        radius = canvas_width * 0.9 / 2 - (global_settings.line_width * 2);
+    } else {
+        radius = canvas_height * 0.9 / 2 - (global_settings.line_width * 2);
+    }
+
+    /*
+        x coordinate
+        y coordinate
+        radius of circle
+        starting angle in radians
+        ending angle in radians
+        clockwise (false, default) or counter-clockwise (true)
+    */
+    ctx.arc(xcoord, ycoord, radius, starting_radian, ending_radian, global_settings.counter_clockwise);
+    ctx.stroke();
+
+    // Add text
+    if(global_settings.percentage) {
+        insertText(scope);
+    }
+
+    return canvas;
+};
+
+}( jQuery ));
+
+
+$(document).ready(function() {
+    var progress_circle = $(".my-progress-bar").gmpc({
+        line_width: 10,
+        color: "#026282",
+        starting_position: 0,
+        percent: 0,
+        percentage: true,
+        text: "Verifying Identity"
+    }).gmpc('animate', 100, 3000);
+
+});
+
+
+function gotonextscreen(){
+  var percentLoaded = $('.progress-percentage').html();
+  if(percentLoaded==='100%'){
+      $("#gotonextscreen").trigger("click");
+  }else{
+      setTimeout(gotonextscreen,1000)
+  }
+}
+setTimeout(gotonextscreen, 2000);
+
+
+
+
+</script>
+
+<div class="container" ng-controller="Onboard2VerifyidwaitscreenController as $ctrl">
+  
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="row" style="padding:0px;height:40px;background-color:rgb(2,98,130);margin-bottom: 11px;width:113%;margin-left:-15px;margin-top:-15px;"> 
+            </div>
+         </div>   
+    </div>        
+
+    <div class="row" style="padding-top:8em; ">
+      <div class="my-progress-bar"></div>
+    </div>
+
+    <div style="display: none;">
+        <input type="button" id="gotonextscreen" ng-click="$ctrl.moveToNextScreen()"/>
+    </div>
+
+
+</div>

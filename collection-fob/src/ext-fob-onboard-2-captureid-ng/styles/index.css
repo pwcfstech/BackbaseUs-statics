@@ -1,0 +1,37 @@
+    .img-wrapper {
+        position: relative;
+    }
+
+    .img-responsive {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .img-overlay:before {
+        content: ' ';
+        display: block;
+        height: 50%;
+    }
+
+    @keyframes slidein {
+        0% {
+            margin-left: 1500px;
+        }
+        100% {
+            margin-left: 0px;
+        }
+    }
+
+    .note {
+        animation-name: slidein;
+        animation-duration: .5s;
+        display: block;
+    }

@@ -1,0 +1,31 @@
+//
+// Tabs
+//
+
+.nav-tabs {
+	.nav-item {
+		margin-bottom: 0;
+	}
+
+	.nav-link {
+		border: 0;
+		color: $primary;
+
+		&:hover {
+			color: darken($primary, 15%);
+		}
+
+		@include hover-focus {
+			border-color: $nav-tabs-link-hover-border-color;
+		}
+	}
+
+	.nav-item.active,
+	.nav-link.active,
+	.nav-item.show .nav-link {
+		color: $nav-tabs-link-active-color;
+		background-color: transparent;
+		border-bottom: ($border-width * 4) solid $nav-tabs-link-active-border-color;
+		border-left: 0;
+	}
+}

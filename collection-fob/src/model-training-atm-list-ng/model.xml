@@ -1,0 +1,11 @@
+<catalog>
+  <feature>
+    <name>model-training-atm-list-ng</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <properties>
+      <property label="Version" name="version" viewHint="text-input,admin,designModeOnly">
+          <value type="string">0.1.0-alpha.0</value>
+      </property>
+    </properties>
+  </feature>
+</catalog>

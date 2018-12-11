@@ -1,0 +1,16 @@
+<catalog>
+    <contenttype>
+        <name>contenttype-training-promotion-banner</name>
+        <properties>
+            <property name="title" label="Title">
+                <value>Promotion Banner</value>
+            </property>
+            <property name="src">
+                <value>$(itemRoot)/promotion-banner.json</value>
+            </property>
+            <property name="typeDefinitionName">
+                <value>PromotionBanner</value>
+            </property>
+        </properties>
+    </contenttype>
+</catalog>

@@ -1,0 +1,75 @@
+<div class="fob-container" ng-controller="Onboard2ReviewinformationController as $ctrl">
+    <div class="fob-nav">
+        <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+        <span class="fob-step-button">step 4 of 5</span>
+    </div>
+
+    <!-- <span><img src="/gateway/api/portal/static/items/ext-fob-onboard-2-terms/assets/logo1.png" width="80px" alt="PwC Logo" /></span>-->
+    <div class="fob-main-content" ng-cloak>
+        <div style="text-align: center;">
+            <span class="logo1"></span>
+        </div>
+      <div class="fob-top-heading">Final Review</div>
+      <div class="fob-content-text">Please review your information below and make changes as needed.</div>
+      <div>
+        <div class="fob-content-text" style="color:gray;">Identification</div>
+            <input class="fob-block-box fob-user-input" style="word-wrap: break-word; height: 4em;" name="fname" placeholder="First Name" type="text" ng-model="$ctrl.userInfo.firstName">
+            <input class="fob-block-box fob-user-input" style="word-wrap: break-word; height: 4em;" name="lname" placeholder="Last Name" type="text" ng-model="$ctrl.userInfo.lastName">
+      </div>
+      <div>
+        <div class="fob-content-text" style="color:gray;">Address</div>
+            <input class="fob-block-box fob-user-input" style="word-wrap: break-word; height: 4em;" name="fname" placeholder="4077 Redwood Avenue" type="text" ng-model="$ctrl.userInfo.streetAddress">
+            <input class="fob-block-box fob-user-input" style="word-wrap: break-word; height: 4em;" name="lname" placeholder="Los Angeles" type="text" ng-model="$ctrl.userInfo.postalCodeCityName">
+
+
+            <div style="display: flex!important;">
+            <span style="width:100%; ">
+              <span style="width:67%;display: flex!;margin-left: 0.8em ">
+                <div style="display: flex!important;">
+                  <span style="width:33%; ">
+                    <select class="fob-block-box fob-user-selection" style="display: flex!important;" ng-model="$ctrl.selectedState" aria-disabled="true" ng-options="state.stateCode for state in $ctrl.usStatesOptions track by state.id"></select>
+                  </span> 
+                  <span style="width:67%;display: flex!;margin-left: 0.8em ">
+                    <input class="fob-block-box fob-user-input" name="zipcode" placeholder="Zip Code" type="text" ng-model="$ctrl.userInfo.postalCode">
+                  </span>
+                </div>
+
+           <!-- <div style="padding-bottom: 1em; display:flex!important;">
+            <span><div style="border-color:#82cdd5; width:33%; margin-right: 0.5em; border-style: solid; border-width: 2px; text-align: center; padding-top: 1em; padding-bottom: 1em;">
+                <select class="fob-block-box fob-user-selection" style="border-style: none; width: 100%; margin-bottom: 0; margin-top: 0; text-align: center;" ng-model="$ctrl.selectedState" aria-disabled="true" ng-options="state.stateCode for state in $ctrl.usStatesOptions track by state.id">
+                </select>
+              </div></span>
+                <span><input class="fob-block-box fob-user-input" style="margin-bottom: 0; margin-top: 0; word-wrap: break-word; height: 4em; flex-grow: 1;" name="zipCode" placeholder="10001" type="text" ng-model="$ctrl.zip"></span>
+           </div> --> 
+      </div>
+      <div>
+        <div class="fob-content-text" style="color:gray;">Personal Information</div>
+        <input class="fob-block-box fob-user-input" style="word-wrap: break-word; height: 4em;" name="fname" placeholder="01/01/2000" type="date" ng-model="datofbirth">
+        <input class="fob-block-box fob-user-input" style="word-wrap: break-word; height: 4em;" name="fname" placeholder="(888)999-0000" type="text" ng-model="$ctrl.userInfo.phone">
+        <input type="text" class="fob-block-box fob-user-input" style="word-wrap: break-word; height: 4em;" name="ssn" maxlength="11" ng-keyup="$ctrl.userInfo.ssid=$ctrl.formatSsn($ctrl.userInfo.ssid);" placeholder="123-45-6789" type="text" ng-model="$ctrl.userInfo.ssid">
+      </div>
+      <div>
+        <div class="fob-content-text" style="color:gray;">Citizenship Status</div>
+        <div class="fob-review-screen-citizen-package" style="width:100%; border-style: solid; border-width: 2px; text-align: center; padding-top: 1em; padding-bottom: 1em;">
+            <select class="fob-review-screen-citizen-package-text"  style="border-style: none; text-align: center; width: 100%;">
+              <option style="text-align:center;" value="" disabled selected>U.S. Citizen</option>
+              <option>Permanent Resident</option>
+              <option>Neither</option>
+            </select>
+            </div>
+      </div>
+      <div>
+        <div class="fob-content-text" style="color:gray;">Package Selection</div>
+        <div class="fob-review-screen-citizen-package" style="width:100%; border-style: solid; border-width: 2px; text-align: center; padding-top: 1em; padding-bottom: 1em;">
+            <select class="fob-review-screen-citizen-package-text" style="border-style: none; text-align: center; width: 100%;">
+              <option style="text-align:center;" value="" disabled selected>Budget & Saving</option>
+              <option>Package #2</option>
+              <option>Package #3</option>
+            </select>
+            </div>
+      </div>
+      <div style="padding-top: 2em;">
+          <div class="fob-next-screen-button" ng-click="$ctrl.moveToNextScreen()">Next</div>
+      </div>
+  </div>
+</div>

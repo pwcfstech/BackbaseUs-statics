@@ -1,0 +1,146 @@
+//Your new Backbase sass variables belong here -- which contain common data structure support for css values
+//This is where the backbase theme overrides or extends existing Bootstrap 4 variables
+
+$sass-asset-helper: false !default;
+
+$fonts-path:                    "../assets/fonts/" !default;
+$fa-font-path:                  "vendor/font-awesome/webfonts/";
+
+// Typography
+
+$font-family-sans-serif:        $font-name, "Helvetica Neue", Arial, sans-serif !default;
+
+$line-height-computed:          floor(($font-size-base * $line-height-base));
+
+// Icon Font
+
+$font-icon-size:                ($font-size-base * 1.5) !default;
+
+// Colors
+
+$success-bright:                mix($white, $green, 90%);
+$danger-bright:                 mix($white, $danger, 90%);
+$info-bright:                   mix($white, $cyan, 90%);
+
+// Badges
+
+$badge-primary:                 $primary;
+$badge-secondary:               $secondary;
+$badge-success:                 $success;
+$badge-warning:                 $warning;
+$badge-danger:                  $danger;
+
+// Borders
+
+$default-border: 1px solid $gray-200;
+$default-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+// Chart tooltip
+
+$chart-tooltip-arrow-size: 10px;
+$chart-tooltip-arrow-position-near: 25%;
+$chart-tooltip-arrow-position-default: 50%;
+$chart-tooltip-arrow-position-far: 75%;
+$chart-tooltip-arrow-border-size: 2px;
+
+// Logo
+
+$logo-height: 15px;
+$logo-margin-bottom: 40px;
+$logo-position-left: 50%;
+
+// Navigation
+
+$navbar-box-shadow: 0 0 1px 0 rgba(0,0,0,0.14),
+    0 1px 1px 0 rgba(0,0,0,0.12),
+    0 1px 1px 0 rgba(0,0,0,0.01);
+$navbar-height: 80px;
+$navbar-brand-width: 200px;
+$navbar-side-width: 200px;
+$navbar-right-width: 350px;
+$navbar-top-height: $navbar-height;
+$navigation-main-content-padding-top: 30px;
+$navigation-main-content-padding-left: 15px;
+$navigation-main-content-padding-right: 15px;
+
+// Notifications
+
+$notification-base-indent: 15px;
+$notification-spacing-small: 2px;
+$notification-font-size-small: $font-size-sm;
+$notification-height: 90px;
+$notification-spacing: 12px;
+$notification-offset: 5px;
+$notification-popover-custom-line-height: 1.7;
+$notification-width: $popover-max-width;
+$notification-height: 90px;
+$notification-popup-wrapper-top: 60px;
+$notification-popup-wrapper-right: 0;
+
+$notification-sticky-wrapper-margin-top: $navigation-main-content-padding-top * -1;
+$notification-sticky-wrapper-margin-left: $navigation-main-content-padding-left * -1;
+$notification-sticky-wrapper-margin-right: $navigation-main-content-padding-right * -1;
+
+//  Notification Badge
+$notification-badge-margin-top: 4px;
+$notification-badge-btn-padding: 8px 9px 5px 9px;
+$notification-badge-btn-dot-padding: 0 3px;
+$notification-badge-btn-dot-top: -1px;
+$notification-badge-btn-dot-right: 0;
+$notification-badge-btn-dot-size: 18px;
+$notification-badge-btn-dot: $primary;
+
+//  Notification Popover
+$notification-popover-list-height: $notification-height * 3 + 2px;
+$notification-popover-custom-line-height: 1.7;
+/* transform translate x = badge width / 2 - arrow right offset - arrow width / 2 - popover border width */
+$notification-popover-arrow-translate-x: 7px;
+
+// Loading Overlay
+$loading-overlay-cover-zindex: 1035;
+$loading-overlay-spinner-zindex: 1037;
+$loading-overlay-spinner-size: 5rem;
+$loading-overlay-cover-background: $gray-100;
+$loading-overlay-cover-opacity: 0.6;
+
+// Form Input
+$form-input-spinner-size: 1.8rem;
+
+// Tables
+
+$small-table-col-margin: 120px;
+
+// Modals
+
+$modal-max-height: 450px;
+
+// Chart colors
+
+$chart-colors:
+  lighten($blue, 10%),
+  lighten($cyan, 10%),
+  lighten($green, 10%),
+  lighten($yellow, 10%),
+  lighten($orange, 10%),
+  lighten($red, 10%),
+  lighten($pink, 10%),
+  lighten($purple, 10%),
+  lighten($indigo, 10%),
+  lighten($teal, 10%),
+  darken($blue, 10%),
+  darken($cyan, 10%),
+  darken($green, 10%),
+  darken($yellow, 10%),
+  darken($orange, 10%),
+  darken($red, 10%),
+  darken($pink, 10%),
+  darken($purple, 10%),
+  darken($indigo, 10%),
+  darken($teal, 10%);
+
+$chart-primary-color: $primary;
+$chart-negative-color: $danger;
+$chart-positive-color: $success;
+
+// Currency input
+$currency-selector-width: 105px;

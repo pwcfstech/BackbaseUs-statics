@@ -1,0 +1,35 @@
+////
+/// Example Component
+/// @group components
+/// @author Mark de Jong
+////
+
+/// Component wrapper class
+/// === Dropdowns Section ===
+/// Used in : account-selector
+/* BS4 Hack support to show dropdown menu */
+.dropdown.open {
+  & > .dropdown-menu {
+    @extend .dropdown-menu.show;
+  }
+  & .dropdown-item {
+    &.active > a {
+      color: $primary;
+    }
+  }
+}
+
+// Dropdowns
+
+$dropdown-chevron-width: $font-size-base;
+$dropdown-chevron-height: $line-height-computed;
+
+.dropdown-toggle {
+  &:after {
+    display: none;
+  }
+  .chevron-icon {
+    @include stick-right($dropdown-chevron-width, $dropdown-chevron-height);
+    right: 15px;
+  }
+}

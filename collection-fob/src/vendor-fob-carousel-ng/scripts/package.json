@@ -1,0 +1,34 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "vendor-fob-carousel-ng",
+        "scope": null,
+        "escapedName": "vendor-fob-carousel-ng",
+        "name": "vendor-fob-carousel-ng",
+        "rawSpec": "1.3.3-bb.4",
+        "spec": "1.3.3-bb.4",
+        "type": "version"
+      }
+     
+    ]
+  ],
+  "_from": "vendor-fob-carousel-ng",
+  "_id": "vendor-fob-carousel-ng",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/vendor-fob-carousel-ng",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "vendor-fob-carousel-ng",
+    "scope": null,
+    "escapedName": "vendor-fob-carousel-ng",
+    "name": "vendor-fob-carousel-ng"
+  },
+
+  "main": "scripts/vendor-fob-carousel-ng.js",
+  "name": "vendor-fob-carousel-ng",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "1.3.3-bb.4"
+}

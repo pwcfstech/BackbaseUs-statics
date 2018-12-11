@@ -1,0 +1,17 @@
+////
+/// Mixins
+/// @group helpers
+/// @author Mark de Jong
+////
+
+//Your new custom sass mixins belong here -- which output some css values via the `@include` syntax keyword
+//This is where the custom theme overrides or extends existing Backbase mixins
+//It is not recommended to directly override Bootstrap mixins.
+//Please refer to the generated sassdocs for reusable mixins API documentations
+
+/// Set flexbox to element
+@mixin flex {
+  // write the css here
+  display: -webkit-flex;
+  display: flex;
+}

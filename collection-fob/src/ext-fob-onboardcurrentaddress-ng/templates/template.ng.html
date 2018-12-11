@@ -1,0 +1,52 @@
+<div class="fob-container" ng-controller="OnboardcurrentaddressController as $ctrl">
+
+    <div class="fob-nav">
+        <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+        <!--<span><img src="/gateway/api/portal/static/items/ext-fob-onboard-2-terms/assets/logo1.png" width="80px" alt="PwC Logo" /></span>-->
+        <span class="fob-step-button">step 3 of 5</span>
+    </div>
+
+    <div class="fob-main-content" ng-cloak>
+        <div style="text-align: center;">
+            <span class="logo1"></span>
+        </div>
+        <div class="fob-top-heading">Great, Thanks {{$ctrl.userInfo.firstName}}!</div>
+        <div class="fob-top-heading-subtitle" style="color:black;">
+            Please review your information below and make any edits as needed:
+        </div>
+        <div class="fob-bold fob-content-text">Identification*</div>
+        <div>
+            <input class="fob-block-box fob-user-input" name="firstName" placeholder="Legal First Name" type="text" ng-model="$ctrl.firstName" required>
+        </div>
+        <div>
+            <input class="fob-block-box fob-user-input" name="lastName" placeholder="Legal Last Name" type="text" ng-model="$ctrl.lastName" required>
+        </div>
+        <div class="fob-bold fob-content-text">Address*</div>
+        <div>
+            <input class="fob-block-box fob-user-input" name="streetAddress" placeholder="Street Address" type="text" ng-model="$ctrl.streetAddress" required>
+        </div>
+        <div>
+            <input class="fob-block-box fob-user-input" name="city" placeholder="City" type="text" ng-model="$ctrl.city" required>
+        </div>
+        <div style="display: flex!important;">
+            <span style="width:18%; ">
+                    <select class="fob-block-box fob-user-selection" style="display: flex!important;" ng-model="$ctrl.selectedState"
+                        aria-disabled="true"
+                        ng-options="state.stateCode for state in $ctrl.usStatesOptions track by state.id">
+                    </select>
+            </span>    
+            <span style="width:85%;display: flex!;margin-left: 0.8em ">
+                <input class="fob-block-box fob-user-input" name="zipcode" placeholder="Zip Code" type="text" ng-model="$ctrl.zipcode">
+            </span>
+        </div>
+        <div class="fob-bold fob-content-text">Personal Information*</div>
+        <div>
+            <input class="fob-block-box fob-user-input" name="dob" type="date" ng-model="$ctrl.dob" required/>
+        </div>
+        <div>
+            <input class="fob-block-box fob-user-input" name="mobilePhoneNumber" maxlength="12" ng-keyup="$ctrl.mobilePhoneNumber=$ctrl.formatPhoneNumber($ctrl.mobilePhoneNumber);" placeholder="Mobile Phone Number" type="text" ng-model="$ctrl.mobilePhoneNumber">
+        </div>
+        <div style="color:rgb(166,164,164); font-size:0.8em;"> * indicates a required field</div>
+        <div class="fob-next-screen-button" style="margin-top:3em;" ng-click="$ctrl.moveToNextScreen()">Next</div>
+    </div>
+</div>

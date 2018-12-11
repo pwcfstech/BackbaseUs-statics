@@ -1,0 +1,34 @@
+<div class="fob-container" ng-controller="OnboardpersonalinfoController as $ctrl">
+    <div class="fob-nav">
+        <span class="fob-back-button" ng-click="$ctrl.moveToPreviousScreen()" role="button" tabindex="0">&#8592;</span>
+
+        <!--<span><img src="/gateway/api/portal/static/items/ext-fob-onboard-2-terms/assets/logo1.png" width="80px" alt="PwC Logo" /></span>-->
+        <span class="fob-step-button">step 3 of 5</span>
+    </div>
+
+
+    <div class="fob-main-content">
+        <div style="text-align: center;">
+            <span class="logo1"></span>
+        </div>
+
+        <div class="fob-top-heading" style="padding: 15px 1px ;">Thanks {{$ctrl.firstName}}!</div>
+
+        <div class="fob-top-heading-subtitle" style="color:black;padding: 2px 1px 7px 1px;">
+            Please select how you would like to provide your personal information.
+        </div>
+       <!-- <div class="fob-content-text">
+            Please select how you would like to provide your information.
+        </div> -->
+        <div class="fob-top-heading"> </div>
+        <div class="fob-user-selection-button" ng-click="$ctrl.moveToNextScreen('capture-id')">
+            <span style="float:left;"><img src="$(contextRoot)/static/features/%5BBBHOST%5D/ext-fob-onboardpersonalinfo-ng/assets/cell1.png"
+                                           style="background:#0092AC; width:1em; padding: 1px 1px 1px 1px; margin-right:0.5em;"/></span>
+            <span>Drivers License</span>
+        </div>
+        <div class="fob-user-selection-button" ng-click="$ctrl.moveToNextScreen('current-address')">
+            <span class="glyphicon glyphicon-pencil" style="color:#82cdd5; text-decoration:underline; padding-right:0.5em;"></span>
+            <span style="padding-left: 0em;white-space: nowrap; position: absolute; text-overflow: ellipsis;overflow: hidden;">Manual Entry</span>
+        </div>
+    </div>
+</div>
